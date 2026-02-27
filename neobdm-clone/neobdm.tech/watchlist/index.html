@@ -343,7 +343,7 @@
 <div class="container-fluid w-90">
 
     <div class="row">
-        <form method="post" action="https://neobdm.tech/watchlist/~add-stock" class="form-inline px-2">
+        <form method="post" action="#" class="form-inline px-2">
             <input type="hidden" name="csrfmiddlewaretoken" value="zD5PcXFZIVfjPQ9vUOhpUtzsbSr1n9eCzFEdThBOiqWRaFjfrjldFbAjmR4wQl3z">
             <div class="input-group ml-1" style="width: 100%; max-width: 425px;">
                 <input id="stock-input" type="text" class="form-control form-control-sm" placeholder="ANTM,BBCA,BBRI,CPIN ... ... (lebih dari 1, pisah dengan koma)" name="stock" autocomplete="off">
@@ -441,7 +441,7 @@ $(() => {
             {
                 "targets": 0,
                 "render": function (data, type, row, meta) {
-                    return `<a href="https://neobdm.tech/stock_detail/${data}" target="_blank">${data} <sup><i class="fas fa-xxs fa-external-link-alt"></i></sup></a>`;
+                    return `<a href="#" target="_blank">${data} <sup><i class="fas fa-xxs fa-external-link-alt"></i></sup></a>`;
                 }                
             }            
         ],
