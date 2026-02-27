@@ -1,0 +1,4968 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+  <meta name="author" content="NeoBDM Technology"> 
+  <meta name="keywords" content="Saham Indikator Bandarmologi NeoBDM Foreign Flow Screening Belajar Analisa Teknikal Chart Indonesia">  
+
+  <meta property="og:title" content="Belajar Analisa Saham Bersama NeoBDM">
+  <meta property="og:description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+
+  <title>NeoBDM | Tutorial</title>
+
+  <link rel="shortcut icon" href="../static/images/favicon.ico">
+
+  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="../static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="../static/css/adminlte/adminlte.min.css">
+  <link rel="stylesheet" href="../static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../static/css/selectize/selectize.bootstrap5.min.css">    
+  <link rel="stylesheet" href="../static/css/custom/style.css">  
+  
+
+  
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed dark-mode sidebar-collapse">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img src="/static/images/android-chrome-192x192.png" alt="NeoBDM Logo" class="animation__wobble" height="60" width="60">
+    </div> -->
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-light navbar-dark text-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a id="collapse-burger" class="nav-link" data-widget="pushmenu" href="index.html#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+        
+        <li class="nav-item">
+          <div id="dashboard-search-container">
+            <select id="input-ticker" class="form-control form-control-sm" style="width: 175px;">
+            </select>
+          </div>
+          <a id="dashboard-button" type="button" class="btn input-group-text" style="display: none;"><i class="fas fa-eye"></i></a>
+        </li>
+        
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Dark theme -->
+        <li class="nav-item" id="theme-toggle">
+          <a class="nav-link" href="index.html#">
+            <i id="theme-toggle-icon" class="fas fa-sun"></i>
+          </a>
+        </li>
+
+        <!-- Settings Dropdown -->
+        
+        <!-- Settings -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-bs-toggle="dropdown" href="index.html#" aria-expanded="false">
+            <i class="fas fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href="https://neobdm.tech/payments/history/" class="dropdown-item">Payment History</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a href="https://neobdm.tech/users/profile/" class="dropdown-item">Profile</a></li>
+          </ul>
+        </li>
+
+        <!-- Sign out -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://neobdm.tech/accounts/logout/">
+            <i class="fas fa-flip-horizontal fa-sign-out-alt"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Sidebar -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="https://neobdm.tech/home/" class="brand-link">
+        <img src="../static/images/android-chrome-192x192.png" alt="NeoBDM Logo"
+          class="brand-image img-circle elevation-3">
+        <span class="brand-text text-lg font-weight-bold text-yellow">NeoBDM</span>
+      </a>
+
+      <!-- Sidebar -->
+      
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline my-2">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-collapse-hide-child"
+            data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- Home -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/home/" class="nav-link">
+                <i class="nav-icon fas fa-home"></i> 
+                <p>Home</p>
+              </a>
+            </li>            
+            
+            
+            <!-- Subscribe -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/subscription/" class="nav-link">
+                <i class="nav-icon fas fa-shopping-cart"></i>
+                <p>Subscribe</p>
+              </a>
+            </li>
+            
+
+            <!-- Watchlist -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/watchlist/" class="nav-link">
+                <i class="nav-icon fas fa-star text-yellow"></i>
+                <p>Watchlist</p>
+              </a>
+            </li>            
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/dashboard/screener/" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <!-- Screening -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-filter"></i>
+                <p>Screening<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/market_summary/" class="nav-link">
+                    <p>Market Summary</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/sector_activity/" class="nav-link">
+                    <p>Sector Activity</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/rotation_chart/" class="nav-link">
+                    <p>Rotation Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_stalker/" class="nav-link">
+                    <p>Broker Stalker</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Analysis -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                <p>Analysis<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/transaction_chart/" class="nav-link">
+                    <p>Transaction Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/done_detail/" class="nav-link">
+                    <p>Done Detail Visualization</p>
+                  </a>
+                </li>                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/seasonality_table/" class="nav-link">
+                    <p>Seasonality Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/balance_position_chart/" class="nav-link">
+                    <p>Balance Position Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_summary/" class="nav-link">
+                    <p>Broker Summary</p>
+                  </a>
+                </li>                                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/inventory/" class="nav-link">
+                    <p>Inventory Chart</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Experimental -->
+            <!-- <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-flask"></i>
+                <p>Experimental<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">             
+                  <a href="/coming_soon/" class="nav-link">
+                    <p>Volume Price Analysis</p>
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- Money Management -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/calculator/" class="nav-link">
+                <i class="nav-icon fas fa-calculator"></i>
+                <p>Money Management</p>
+              </a>
+            </li>
+            <!-- Recording -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>Recording<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>Tutorial</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/clip/" class="nav-link">
+                    <i class="nav-icon fas fa-cut"></i>
+                    <p>Clip / Highlight</p>
+                  </a>
+                </li>                 
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/livestream/" class="nav-link">
+                    <i class="nav-icon fas fa-podcast"></i>
+                    <p>Livestream</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Archives -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>Archive<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/evaluation/list" class="nav-link">
+                    <i class="nav-icon fas fa-chalkboard-teacher text-green"></i>
+                    <p>Arsip Evaluasi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/qna/list" class="nav-link">
+                    <i class="nav-icon fas fa-question-circle text-green"></i>
+                    <p>Arsip QnA</p>
+                  </a>
+                </li>
+              </ul>
+            </li>            
+            <!-- FAQ -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/faq/" class="nav-link">
+                <i class="nav-icon fas fa-book text-green"></i>
+                <p>FAQ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-hashtag"></i>
+                <p>Social Media<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/neobdm" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-youtube"></i> Youtube</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://t.me/joinchat/6tpUCd6qEwZmN2Jl" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-telegram"></i> Telegram Channel</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-1">
+            <div class="col-sm-6">
+              <h1 class="m-0">Tutorial NeoBDM</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+<li class="breadcrumb-item"><a href="https://neobdm.tech/home/"><i class="fas fa-home"></i> Home</a></li>
+<li class="breadcrumb-item active">Tutorial</li>
+
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- /.header -->
+
+      <!-- Content -->
+      <div class="content">
+        
+<h3>Penggunaan Fitur-Fitur NeoBDM</h3>
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">NeoBDM v2</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Q7oYwPHGkNU"
+              data-title="Done Detail &amp; Daily Inventory (Experimental)"
+              data-url="/tutorial/Z2favcqK6qJgCe1G"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Q7oYwPHGkNU/mqdefault.jpg" alt="" />
+            <strong>Done Detail &amp; Daily Inventory (Experimental)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zUTIrx3fevE"
+              data-title="Risk &amp; Money Management 101"
+              data-url="/tutorial/OoJVT79e52loLWiy"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zUTIrx3fevE/mqdefault.jpg" alt="" />
+            <strong>Risk &amp; Money Management 101</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="38conhT5Fg4"
+              data-title="Rotation Chart 101"
+              data-url="/tutorial/e9s3g8v18okkqPRB"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/38conhT5Fg4/mqdefault.jpg" alt="" />
+            <strong>Rotation Chart 101</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="LCrqVNbLcDY"
+              data-title="Market Summary 101"
+              data-url="/tutorial/EUR4aLIZcaBOGQlU"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/LCrqVNbLcDY/mqdefault.jpg" alt="" />
+            <strong>Market Summary 101</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="PfJLYgEVlbI"
+              data-title="Transaction Chart 101"
+              data-url="/tutorial/5VSoqy1YlTdjHcBn"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/PfJLYgEVlbI/mqdefault.jpg" alt="" />
+            <strong>Transaction Chart 101</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ui2UN6IYAAU"
+              data-title="Diskusi terkait saham scripless"
+              data-url="/tutorial/kVE02cY8BPksOY1H"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ui2UN6IYAAU/mqdefault.jpg" alt="" />
+            <strong>Diskusi terkait saham scripless</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zwXKi_T2DBs"
+              data-title="Custom Screener 101"
+              data-url="/tutorial/yDg2VhrSHOcsWVbC"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zwXKi_T2DBs/mqdefault.jpg" alt="" />
+            <strong>Custom Screener 101</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="FVJlFu6vunM"
+              data-title="Inventory Analysis ala Fadhilonn"
+              data-url="/tutorial/w2KgkuFbpaYm3X0Y"></a>
+          
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/FVJlFu6vunM/mqdefault.jpg" alt="" />
+            <strong>Inventory Analysis ala Fadhilonn</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="card card-outline card-danger collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">NeoBDM v1 [Deprecated Video]</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="QKCktleGnrg"
+              data-title="Seasonality Analysis (NeoBDM v1)"
+              data-url="/tutorial/LjA7LYF0RchUEk4x"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/QKCktleGnrg/mqdefault.jpg" alt="" />
+            <strong>Seasonality Analysis (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xmDsq1cBDzs"
+              data-title="Inventory Analysis (NeoBDM v1)"
+              data-url="/tutorial/M3gHWB7wdtZSOarA"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xmDsq1cBDzs/mqdefault.jpg" alt="" />
+            <strong>Inventory Analysis (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="jFgvhPlmfMQ"
+              data-title="Balance Position Chart (NeoBDM v1)"
+              data-url="/tutorial/1syU26Q0AhbQxbS8"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/jFgvhPlmfMQ/mqdefault.jpg" alt="" />
+            <strong>Balance Position Chart (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="WZ4z0gnqZhg"
+              data-title="Transaction Chart (NeoBDM v1)"
+              data-url="/tutorial/Qc7i1JFFz4fWFkY6"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/WZ4z0gnqZhg/mqdefault.jpg" alt="" />
+            <strong>Transaction Chart (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Un5_T5Kj8LI"
+              data-title="Performance Rotation Chart (NeoBDM v1)"
+              data-url="/tutorial/C3S85apeeg1YBWem"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Un5_T5Kj8LI/mqdefault.jpg" alt="" />
+            <strong>Performance Rotation Chart (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                 
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="9cio8l16DX8"
+              data-title="Market Summary (NeoBDM v1)"
+              data-url="/tutorial/Uxq1ZNuI9PcPZJdf"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/9cio8l16DX8/mqdefault.jpg" alt="" />
+            <strong>Market Summary (NeoBDM v1)</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<hr>
+<h3>Seri untuk Pemula</h3>
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Mindset & Psikologi Trading</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Ej-J_tXpSXI"
+              data-title="Ep 0: Pengenalan dan Pengantar Materi"
+              data-url="/tutorial/pXgGtda33BqLTok5"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Ej-J_tXpSXI/mqdefault.jpg" alt="" />
+            <strong>Ep 0: Pengenalan dan Pengantar Materi</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="1Pm0C5etzEw"
+              data-title="Ep 1: Kenapa banyak yang rugi di saham"
+              data-url="/tutorial/RXtipz1Li9TSCemw"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/1Pm0C5etzEw/mqdefault.jpg" alt="" />
+            <strong>Ep 1: Kenapa banyak yang rugi di saham</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="6gnSeASvFmk"
+              data-title="Ep 2: Bagaimana modal dapat bertumbuh"
+              data-url="/tutorial/KbVl3ofBIrrfqkKM"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/6gnSeASvFmk/mqdefault.jpg" alt="" />
+            <strong>Ep 2: Bagaimana modal dapat bertumbuh</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="IY_oPd2cFxY"
+              data-title="Ep 3: Memilih sisi koin yang lebih berat"
+              data-url="/tutorial/2AqLAFCTvwcC3rzM"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/IY_oPd2cFxY/mqdefault.jpg" alt="" />
+            <strong>Ep 3: Memilih sisi koin yang lebih berat</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="9zLDkim-cZI"
+              data-title="Ep 4: Kekuatan dari Risk-Reward dan Ekspektasi"
+              data-url="/tutorial/rmiTFEAXg3Nf9xoR"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/9zLDkim-cZI/mqdefault.jpg" alt="" />
+            <strong>Ep 4: Kekuatan dari Risk-Reward dan Ekspektasi</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GT17xjUTfbg"
+              data-title="Ep 5: 4 Pilar dalam Trading"
+              data-url="/tutorial/VFGvzCh5obXjFG4I"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GT17xjUTfbg/mqdefault.jpg" alt="" />
+            <strong>Ep 5: 4 Pilar dalam Trading</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                  
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xIPm0iTbfw8"
+              data-title="Ep 6: 7 Dosa Mematikan dalam Trading"
+              data-url="/tutorial/FGCs98raO0dkZm8Z"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xIPm0iTbfw8/mqdefault.jpg" alt="" />
+            <strong>Ep 6: 7 Dosa Mematikan dalam Trading</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Risk & Money Management</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="t5ko4ZJ2a1w"
+              data-title="Ep 7: Mengenal Risiko di Pasar Modal"
+              data-url="/tutorial/dSrSs5FvFzEFyWjV"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/t5ko4ZJ2a1w/mqdefault.jpg" alt="" />
+            <strong>Ep 7: Mengenal Risiko di Pasar Modal</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="WNAECMKy53w"
+              data-title="Ep 8: Membatasi kerugian di angka berapa?"
+              data-url="/tutorial/lFwe20Ai1VJJJnuQ"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/WNAECMKy53w/mqdefault.jpg" alt="" />
+            <strong>Ep 8: Membatasi kerugian di angka berapa?</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="rJ1WhChzlwA"
+              data-title="Ep 9: Risiko yang wajar dalam trading"
+              data-url="/tutorial/nvtzib3zRaqNgvJe"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/rJ1WhChzlwA/mqdefault.jpg" alt="" />
+            <strong>Ep 9: Risiko yang wajar dalam trading</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="F_tEuM-_f4k"
+              data-title="Ep 10: Cara membuat Trading Plan dan Lot Sizing"
+              data-url="/tutorial/GA1MmEJkV5tyE4cc"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/F_tEuM-_f4k/mqdefault.jpg" alt="" />
+            <strong>Ep 10: Cara membuat Trading Plan dan Lot Sizing</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Analisa Teknikal</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="IpK9GYTin3k"
+              data-title="Ep 13: Buat Apa Belajar Analisa !?"
+              data-url="/tutorial/SEjP6dgRmhHh1it5"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/IpK9GYTin3k/mqdefault.jpg" alt="" />
+            <strong>Ep 13: Buat Apa Belajar Analisa !?</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zPAKXVhSvVU"
+              data-title="Ep 14A: Menggunakan Alert di Trading View (dan fitur Lainnya)"
+              data-url="/tutorial/lpEkzXzHnauEN9Rj"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zPAKXVhSvVU/mqdefault.jpg" alt="" />
+            <strong>Ep 14A: Menggunakan Alert di Trading View (dan fitur Lainnya)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="X8irwq7pr6g"
+              data-title="Ep 14B: Chart Settings yang Saya Pakai"
+              data-url="/tutorial/fikWcwGVqDNDSaVe"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/X8irwq7pr6g/mqdefault.jpg" alt="" />
+            <strong>Ep 14B: Chart Settings yang Saya Pakai</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Ldf7-C3lmCw"
+              data-title="Ep 14C: Cara setup Watchlist dan Hotlist di Tradingview (dan fitur lainnya)"
+              data-url="/tutorial/NnQJtg4CSlBkQJvG"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Ldf7-C3lmCw/mqdefault.jpg" alt="" />
+            <strong>Ep 14C: Cara setup Watchlist dan Hotlist di Tradingview (dan fitur lainnya)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="9BHq-IpN7iE"
+              data-title="Ep 14D: Toolbar dan shortcut di Tradingview (dan fitur lainnya)"
+              data-url="/tutorial/HIt6S9MxtgVSae7J"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/9BHq-IpN7iE/mqdefault.jpg" alt="" />
+            <strong>Ep 14D: Toolbar dan shortcut di Tradingview (dan fitur lainnya)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="uC2eTHUu9yI"
+              data-title="Ep 14E: Cara menggunakan Screener di Tradingview (dan fitur lainnya)"
+              data-url="/tutorial/BsLivBuy7yIS4lDk"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/uC2eTHUu9yI/mqdefault.jpg" alt="" />
+            <strong>Ep 14E: Cara menggunakan Screener di Tradingview (dan fitur lainnya)</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<h3>Belajar Analisa Lanjutan</h3>
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Belajar Analisa</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="vgqJsxHTBPA"
+              data-title="Basic Volume Analysis - Dow Theory"
+              data-url="/livestream/1kYuQ9FPTrGluMdI"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/vgqJsxHTBPA/mqdefault.jpg" alt="" />
+            <strong>Basic Volume Analysis - Dow Theory</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="twuX_x47tEA"
+              data-title="Market Structure"
+              data-url="/livestream/JCVwLMVNEalhaYyY"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/twuX_x47tEA/mqdefault.jpg" alt="" />
+            <strong>Market Structure</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="eUdHYW99ubw"
+              data-title="Cara profit dengan Trend Following"
+              data-url="/livestream/dvqaUekKgGgOOGHk"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/eUdHYW99ubw/mqdefault.jpg" alt="" />
+            <strong>Cara profit dengan Trend Following</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="cTtd3oS1WkU"
+              data-title="Sesi QnA Basic Analisa Transaksi"
+              data-url="/livestream/LAbknpNXjaABttQp"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/cTtd3oS1WkU/mqdefault.jpg" alt="" />
+            <strong>Sesi QnA Basic Analisa Transaksi</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="-EHepWSHIJo"
+              data-title="Basic Analisa Transaksi (Kelas Donasi)"
+              data-url="/livestream/vhQlRFVpeMPoB1Ek"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/-EHepWSHIJo/mqdefault.jpg" alt="" />
+            <strong>Basic Analisa Transaksi (Kelas Donasi)</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xQPONi3yDcY"
+              data-title="Saya nyangkut, harus bagaimana?"
+              data-url="/livestream/QVI0GPG7Eo3ryxpj"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xQPONi3yDcY/mqdefault.jpg" alt="" />
+            <strong>Saya nyangkut, harus bagaimana?</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="A6UOvjwHdCk"
+              data-title="Emotionless Trading with IPOT ATM"
+              data-url="/livestream/vm0nMHplylTuNoXC"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/A6UOvjwHdCk/mqdefault.jpg" alt="" />
+            <strong>Emotionless Trading with IPOT ATM</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="2nu2VCOqX-k"
+              data-title="Elliot Wave Theory"
+              data-url="/livestream/TqSJMSgW1PVlKVUq"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/2nu2VCOqX-k/mqdefault.jpg" alt="" />
+            <strong>Elliot Wave Theory</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="j0um4kZy354"
+              data-title="Mengenal Saham Pinky dan Potensi Repo"
+              data-url="/livestream/b3D4Y8lqku45MkgY"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/j0um4kZy354/mqdefault.jpg" alt="" />
+            <strong>Mengenal Saham Pinky dan Potensi Repo</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<h3>Rekaman Livestream</h3>
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Rekaman Evaluation Session</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="RMm9QZx80Qo"
+              data-title="Evaluation Session - 25 Feb 2026"
+              data-url="/livestream/imCBIQZlYTr3rtuu"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/RMm9QZx80Qo/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 Feb 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Z1J9EBCSvDc"
+              data-title="Evaluation Session - 26 Mar 2025"
+              data-url="/livestream/CTHjXeOTE2Wjphao"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Z1J9EBCSvDc/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Mar 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="FyUoCfIu-DM"
+              data-title="Evaluation Session - 24 Jul 2024"
+              data-url="/livestream/QT7CwKM6bL0lM38v"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/FyUoCfIu-DM/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 Jul 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="QHIEcq6XArc"
+              data-title="Evaluation Session - 24 Apr 2024"
+              data-url="/livestream/7bXWEMQMtXt3ERiO"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/QHIEcq6XArc/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 Apr 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="n6M5gLoI9U0"
+              data-title="Evaluation Session - 24 Jan 2024"
+              data-url="/livestream/6cvVCDn1TW0uLvT7"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/n6M5gLoI9U0/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 Jan 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="7Fnfv5cAZGg"
+              data-title="Evaluation Session - 24 May 2023"
+              data-url="/livestream/BWL20GUQLI39xN94"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/7Fnfv5cAZGg/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 May 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="BLZoKgO-wzw"
+              data-title="Evaluation Session - 22 Feb 2023"
+              data-url="/livestream/zcADrVZsHmvCwz7D"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/BLZoKgO-wzw/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 22 Feb 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="pfQT2CMlzFI"
+              data-title="Evaluation Session - 28 Jan 2026"
+              data-url="/livestream/S4KFow3Vbof6f73H"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/pfQT2CMlzFI/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 Jan 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="3ZABTgIb6e8"
+              data-title="Evaluation Session - 22 Oct 2025"
+              data-url="/livestream/DKdorJH5nfFXUYKD"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/3ZABTgIb6e8/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 22 Oct 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="5Dw4vYmNcLs"
+              data-title="Evaluation Session - 24 Sep 2025"
+              data-url="/livestream/FHnh0Pgr206Kdtzr"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/5Dw4vYmNcLs/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 Sep 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="mwuCQCBI1_A"
+              data-title="Evaluation Session - 27 Aug 2025"
+              data-url="/livestream/KvzJgXnUzGM1dHJj"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/mwuCQCBI1_A/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 27 Aug 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="gcJZjw9oWao"
+              data-title="Evaluation Session - 23 Jul 2025"
+              data-url="/livestream/YAZzYemxjy3mXtLw"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/gcJZjw9oWao/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 23 Jul 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zmmSQTc6W6o"
+              data-title="Evaluation Session - 25 Jun 2025"
+              data-url="/livestream/OxQIcn2QDZkEAt3J"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zmmSQTc6W6o/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 Jun 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="l1296yk2vPg"
+              data-title="Evaluation Session - 28 May 2025"
+              data-url="/livestream/37NLUUFr1QLUUeaa"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/l1296yk2vPg/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 May 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="nXJVxGERvuM"
+              data-title="Evaluation Session - 23 Apr 2025"
+              data-url="/livestream/a1l7YcO5ZGGZA8oz"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/nXJVxGERvuM/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 23 Apr 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="JY6lxIeCrGs"
+              data-title="Evaluation Session - 26 Feb 2025"
+              data-url="/livestream/PvlS1kk81H3qzfGQ"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/JY6lxIeCrGs/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Feb 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="lckbEqic1r8"
+              data-title="Evaluation Session - 22 Jan 2025"
+              data-url="/livestream/gKUAoTyMA83rM3H8"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/lckbEqic1r8/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 22 Jan 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="m97I1qG1SHI"
+              data-title="Evaluation Session - 27 Nov 2024"
+              data-url="/livestream/EADTdYKJWUjCLmsf"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/m97I1qG1SHI/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 27 Nov 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="twej9n0DlxY"
+              data-title="Evaluation Session - 23 Oct 2024"
+              data-url="/livestream/ukdcE79IpbT6WZzN"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/twej9n0DlxY/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 23 Oct 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Q4icrCjh4qI"
+              data-title="Evaluation Session - 25 Sep 2024"
+              data-url="/livestream/jsqEcnrcLwbFeXK8"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Q4icrCjh4qI/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 Sep 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="B84BD3LX_B8"
+              data-title="Evaluation Session - 28 Aug 2024"
+              data-url="/livestream/gStLFsHHt0He3oMf"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/B84BD3LX_B8/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 Aug 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="yHrxKZPNsAE"
+              data-title="Evaluation Session - 26 Jun 2024"
+              data-url="/livestream/a0KjFeaadm1OmI33"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/yHrxKZPNsAE/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Jun 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="qLOxmhU3NOg"
+              data-title="Evaluation Session - 22 May 2024"
+              data-url="/livestream/7JnMjsoWOnS0E4Fe"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/qLOxmhU3NOg/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 22 May 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="wSqDfz6Pws4"
+              data-title="Evaluation Session - 27 Mar 2024"
+              data-url="/livestream/bH832W3A2SE3mETD"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/wSqDfz6Pws4/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 27 Mar 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="cgGIBfXzLak"
+              data-title="Evaluation Session - 28 Feb 2024"
+              data-url="/livestream/PtWnzL8HGfGlN6YV"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/cgGIBfXzLak/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 Feb 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="oo5gdsWN-Wo"
+              data-title="Evaluation Session - 22 Nov 2023"
+              data-url="/livestream/eOUguJtzJD9VPSka"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/oo5gdsWN-Wo/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 22 Nov 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="iVs2MsiyNeA"
+              data-title="Evaluation Session - 25 Oct 2023"
+              data-url="/livestream/LHaulaLjw85kPu7c"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/iVs2MsiyNeA/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 Oct 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zVIT1KQaPfg"
+              data-title="Evaluation Session - 27 Sep 2023"
+              data-url="/livestream/Fd1Lm27L6sle86n5"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zVIT1KQaPfg/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 27 Sep 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="BsXtPjM2C64"
+              data-title="Evaluation Session - 23 Aug 2023"
+              data-url="/livestream/HW9KOPk62kFwUjsR"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/BsXtPjM2C64/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 23 Aug 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GRdwuZLcHBo"
+              data-title="Evaluation Session - 26 Jul 2023"
+              data-url="/livestream/hs2eNsnNfyZiAC4m"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GRdwuZLcHBo/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Jul 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ZvnFtZQSsBo"
+              data-title="Evaluation Session - 28 Jun 2023"
+              data-url="/livestream/TnB6Zgc02I9rvw8z"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ZvnFtZQSsBo/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 Jun 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="KLYlnnTPVak"
+              data-title="Evaluation Session - 26 Apr 2023"
+              data-url="/livestream/pKemDAmMptnRsDHH"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/KLYlnnTPVak/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Apr 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="YKJVcd0A6As"
+              data-title="Evaluation Session - 29 Mar 2023"
+              data-url="/livestream/Xu3MEBjwOjJfQcDu"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/YKJVcd0A6As/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 29 Mar 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="f6rhj2JJeYA"
+              data-title="Evaluation Session - 25 Jan 2023"
+              data-url="/livestream/DthFJu2jVRmsyP0Y"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/f6rhj2JJeYA/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 Jan 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="FXSnwCr_Q88"
+              data-title="Evaluation Session - 30 Nov 2022"
+              data-url="/livestream/OLSDvQ7FyyaoyQtV"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/FXSnwCr_Q88/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 30 Nov 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="65YildHt208"
+              data-title="Evaluation Session - 26 Oct 2022"
+              data-url="/livestream/sBb60CppSXpKXJry"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/65YildHt208/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Oct 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="CajoHb5acoA"
+              data-title="Evaluation Session - 28 Sep 2022"
+              data-url="/livestream/TZRUJCWUmMVNpWOW"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/CajoHb5acoA/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 28 Sep 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GS28mzeE4sw"
+              data-title="Evaluation Session - 24 Aug 2022"
+              data-url="/livestream/b9foThuZwVrG03D8"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GS28mzeE4sw/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 24 Aug 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="NjRCuRd5ppY"
+              data-title="Evaluation Session - 27 Jul 2022"
+              data-url="/livestream/8Aiv6L3srXyU8jJD"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/NjRCuRd5ppY/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 27 Jul 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="b5iQFrMdMbE"
+              data-title="Evaluation Session - 29 Jun 2022"
+              data-url="/livestream/dr2n35vNmGR2Uv7t"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/b5iQFrMdMbE/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 29 Jun 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="jmYRwHQuXbI"
+              data-title="Evaluation Session - 25 May 2022"
+              data-url="/livestream/iTMAqWZCNbCaZeL0"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/jmYRwHQuXbI/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 25 May 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="McNdmiSHbiw"
+              data-title="Evaluation Session - 13 Apr 2022"
+              data-url="/livestream/WCyi8Q0fKNiJin41"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/McNdmiSHbiw/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 13 Apr 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="6Yt71jrPwqo"
+              data-title="Evaluation Session - 02 Mar 2022"
+              data-url="/livestream/shS5W4rM8rixlZ2e"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/6Yt71jrPwqo/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 02 Mar 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="t_--BYfnjyk"
+              data-title="Evaluation Session - 05 Jan 2022"
+              data-url="/livestream/Bisx82fxXuvzShpp"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/t_--BYfnjyk/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 05 Jan 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="yf78qb91UZM"
+              data-title="Evaluation Session - 26 Sep 2021"
+              data-url="/livestream/Cy0wzoGbmzB5gycL"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/yf78qb91UZM/mqdefault.jpg" alt="" />
+            <strong>Evaluation Session - 26 Sep 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Rekaman AMA Session</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="KSZ17MO5x-c"
+              data-title="AMA Session - 06 Nov 2024"
+              data-url="/livestream/NrIXASvZZrK5rQzO"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/KSZ17MO5x-c/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Nov 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Anx3_sFaucU"
+              data-title="NeoBDM AMA Session - 07 Jun 2023"
+              data-url="/livestream/j9nr43zSw0wWbGno"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Anx3_sFaucU/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 07 Jun 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="734T8zijb_8"
+              data-title="AMA Session - 04 Feb 2026"
+              data-url="/livestream/5dAn4c9pWkKAndPQ"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/734T8zijb_8/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 04 Feb 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="1HD1mMPBOEw"
+              data-title="AMA Session - 07 Jan 2026"
+              data-url="/livestream/7zcWLtcElECN0hrT"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/1HD1mMPBOEw/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 07 Jan 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Rn7z4-5zJeA"
+              data-title="AMA Session - 03 Dec 2025"
+              data-url="/livestream/R12LXG4qZYE9knic"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Rn7z4-5zJeA/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 03 Dec 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="IapYsHXNCdE"
+              data-title="AMA Session - 05 Nov 2025"
+              data-url="/livestream/DWzyfFJp1FR8cTwe"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/IapYsHXNCdE/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 05 Nov 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="5u9XC1Svc5c"
+              data-title="AMA Session - 01 Oct 2025"
+              data-url="/livestream/RY7T6wK1LoCoBBpv"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/5u9XC1Svc5c/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 01 Oct 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Z3-q1air74Y"
+              data-title="AMA Session - 03 Sep 2025"
+              data-url="/livestream/z7gcjQvLtlSngaTh"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Z3-q1air74Y/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 03 Sep 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="341dGVvUolE"
+              data-title="AMA Session - 06 Aug 2025"
+              data-url="/livestream/7kzoVKrb5DGFjLA9"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/341dGVvUolE/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Aug 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="BmXgMEH0N30"
+              data-title="AMA Session - 02 Jul 2025"
+              data-url="/livestream/inungyn9XofF6UsZ"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/BmXgMEH0N30/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 02 Jul 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="c03fjFnn2S4"
+              data-title="AMA Session - 07 May 2025"
+              data-url="/livestream/VX3n8h3iCDSiHGDT"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/c03fjFnn2S4/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 07 May 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="NlHB95_LXM8"
+              data-title="AMA Session - 05 Mar 2025"
+              data-url="/livestream/xaFF4O0MhNFML5Yr"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/NlHB95_LXM8/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 05 Mar 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="VCmWSabbITg"
+              data-title="AMA Session - 05 Feb 2025"
+              data-url="/livestream/Sn4jqmkeVCkwDZhe"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/VCmWSabbITg/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 05 Feb 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="hSF6Feun9TQ"
+              data-title="AMA Session - 04 Dec 2024"
+              data-url="/livestream/uTYvMWkG2fd0nBjp"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/hSF6Feun9TQ/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 04 Dec 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="pnAF4x8LRbE"
+              data-title="AMA Session - 02 Oct 2024"
+              data-url="/livestream/uhMCAMK83daDMZZ9"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/pnAF4x8LRbE/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 02 Oct 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="hBaJm3MkPmg"
+              data-title="AMA Session - 04 Sep 2024"
+              data-url="/livestream/KKbGdFSjiiniKXkf"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/hBaJm3MkPmg/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 04 Sep 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="A4F5soMyWSI"
+              data-title="AMA Session - 06 Aug 2024"
+              data-url="/livestream/s4VF4jieoVckTjK0"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/A4F5soMyWSI/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Aug 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="EPVcFAMFqco"
+              data-title="AMA Session - 05 Jun 2024"
+              data-url="/livestream/yDwuzQR82iys362k"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/EPVcFAMFqco/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 05 Jun 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="qpc6r5mHtJ8"
+              data-title="AMA Session - 01 May 2024"
+              data-url="/livestream/YtwTJhSxiTNJ8J3e"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/qpc6r5mHtJ8/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 01 May 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="LFMOKIIqzrc"
+              data-title="AMA Session - 03 Apr 2024"
+              data-url="/livestream/GcHwxwAKiaiPVPqt"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/LFMOKIIqzrc/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 03 Apr 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="lGyMON9iDLQ"
+              data-title="AMA Session - 06 Mar 2024"
+              data-url="/livestream/TEsqFXNsDlQ3PFmL"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/lGyMON9iDLQ/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Mar 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="EjpawjCxMkM"
+              data-title="AMA Session - 07 Feb 2024"
+              data-url="/livestream/c2HRXzAXvEWBBGct"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/EjpawjCxMkM/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 07 Feb 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="dqbvhqr0iso"
+              data-title="AMA Session - 03 Jan 2024"
+              data-url="/livestream/RkrNKaVjiY9xLJpu"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/dqbvhqr0iso/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 03 Jan 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XrXepOEAVq4"
+              data-title="AMA Session - 06 Dec 2023"
+              data-url="/livestream/Pt9U5H52104D5jcC"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XrXepOEAVq4/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Dec 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="mEGp3h9Xtxg"
+              data-title="AMA Session - 01 Nov 2023"
+              data-url="/livestream/5D8uLwsbCcC1AZK6"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/mEGp3h9Xtxg/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 01 Nov 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="UKalyWUEQ6c"
+              data-title="AMA Session - 04 Oct 2023"
+              data-url="/livestream/Y9MpjYkLsDtTyWPr"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/UKalyWUEQ6c/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 04 Oct 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Nn3qVvHfTa8"
+              data-title="AMA Session - 06 Sep 2023"
+              data-url="/livestream/uYTVGDEpcTZEc6LD"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Nn3qVvHfTa8/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 06 Sep 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="cqlGt0JgH1M"
+              data-title="AMA Session - 02 Aug 2023"
+              data-url="/livestream/4aPhnUFZXwvmjRrJ"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/cqlGt0JgH1M/mqdefault.jpg" alt="" />
+            <strong>AMA Session - 02 Aug 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="bwlV-qunaRw"
+              data-title="NeoBDM AMA Session - 05 Jul 2023"
+              data-url="/livestream/LNAoOFkD1GVAQU2k"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/bwlV-qunaRw/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 05 Jul 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="3JTbxeGhO14"
+              data-title="NeoBDM AMA Session - 03 May 2023"
+              data-url="/livestream/xkQcIgO932amMRVo"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/3JTbxeGhO14/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 03 May 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="z0u7dA4xlHg"
+              data-title="NeoBDM AMA Session - 05 Apr 2023"
+              data-url="/livestream/YNOmyibZO31ak63k"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/z0u7dA4xlHg/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 05 Apr 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Lw27JqPEBTk"
+              data-title="NeoBDM AMA Session - 01 Mar 2023"
+              data-url="/livestream/engtD9XVpKJ1oOPL"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Lw27JqPEBTk/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 01 Mar 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zXqnXW53-GI"
+              data-title="NeoBDM AMA Session - 01 Feb 2023"
+              data-url="/livestream/QcYR5VECMW8zrbkU"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zXqnXW53-GI/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 01 Feb 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="WhBoAHf_9hk"
+              data-title="NeoBDM AMA Session - 04 Jan 2023"
+              data-url="/livestream/DsriGymUGBaW1bv1"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/WhBoAHf_9hk/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 04 Jan 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="kWJXA3TB0AA"
+              data-title="NeoBDM AMA Session - 07 Dec 2022"
+              data-url="/livestream/DeTqvdfuK8pXK4HX"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/kWJXA3TB0AA/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 07 Dec 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ClbXltHsbhI"
+              data-title="NeoBDM AMA Session - 02 Nov 2022"
+              data-url="/livestream/s2QgeclXXGmxqqxO"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ClbXltHsbhI/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 02 Nov 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XYfS_pwEoRc"
+              data-title="NeoBDM AMA Session - 05 Oct 2022"
+              data-url="/livestream/uST2EFMhaHN0UGQ5"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XYfS_pwEoRc/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 05 Oct 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="5sFYut00htQ"
+              data-title="NeoBDM AMA Session - 07 Sep 2022"
+              data-url="/livestream/Z7MC3oYbkugLDXoH"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/5sFYut00htQ/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 07 Sep 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="3cEouol1qvI"
+              data-title="NeoBDM AMA Session - 03 Aug 2022"
+              data-url="/livestream/28JGkO2s4uEzI52Q"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/3cEouol1qvI/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 03 Aug 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="IBwTEe8Auug"
+              data-title="NeoBDM AMA Session - 06 Jul 2022"
+              data-url="/livestream/95AJn7OCsqJq1HJi"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/IBwTEe8Auug/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 06 Jul 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="d00cHhN9V9A"
+              data-title="NeoBDM AMA Session - 15 Jun 2022"
+              data-url="/livestream/8A4qz0Sn0FGK0c1M"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/d00cHhN9V9A/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 15 Jun 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="f99cdlB5LKQ"
+              data-title="NeoBDM AMA Session - 18 May 2022"
+              data-url="/livestream/jawkaA4bWhRJSKeA"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/f99cdlB5LKQ/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 18 May 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="o7vr6I7OnOM"
+              data-title="NeoBDM AMA Session - 06 Apr 2022"
+              data-url="/livestream/o53I7yVXCU6bmnQJ"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/o7vr6I7OnOM/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 06 Apr 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="-J1QNe7-zIY"
+              data-title="NeoBDM AMA Session - 16 Mar 2022"
+              data-url="/livestream/rIbOFsM6zIPvjz9n"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/-J1QNe7-zIY/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 16 Mar 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GaEPrv_Q-nI"
+              data-title="NeoBDM AMA Session - 26 Jan 2022"
+              data-url="/livestream/Fg09z5Ux5otSMrZY"></a>          
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GaEPrv_Q-nI/mqdefault.jpg" alt="" />
+            <strong>NeoBDM AMA Session - 26 Jan 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="card card-outline card-success collapsed-card">
+  <div class="card-header py-2">
+    <h3 class="card-title">Rekaman QnA Session</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="--BDH_uQYVA"
+              data-title="QnA Session - 18 Dec 2024"
+              data-url="/livestream/YnUjUCMezDOzMR85"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/--BDH_uQYVA/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 18 Dec 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="nPA7IESwObY"
+              data-title="QnA Session - 13 Dec 2023"
+              data-url="/livestream/5y61vJAUUFwfFriY"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/nPA7IESwObY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Dec 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="knoabcZaioY"
+              data-title="QnA Session - 18 Jan 2023"
+              data-url="/livestream/0czUt5wv1URvopJr"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/knoabcZaioY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 18 Jan 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="mF5rzKkNOQM"
+              data-title="QnA Session - 21 Dec 2022"
+              data-url="/livestream/bE0fsltgp6o2HnZL"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/mF5rzKkNOQM/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Dec 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+          
+          <div class="ribbon-wrapper ribbon-sm">
+            <div class="ribbon bg-red text-sm">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="BkhDMKU8JT0"
+              data-title="QnA Session - 31 Aug 2022"
+              data-url="/livestream/gs0JjB1coJbz1UfB"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/BkhDMKU8JT0/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 31 Aug 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="RmpNux_SpE4"
+              data-title="QnA Session - 11 Feb 2026"
+              data-url="/livestream/2zcL9iQSg9f9nokV"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/RmpNux_SpE4/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Feb 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="8ps9bMvC2QM"
+              data-title="QnA Session - 21 Jan 2026"
+              data-url="/livestream/VxEkKADtD4rl4HCt"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/8ps9bMvC2QM/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Jan 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xA5H007Bx4I"
+              data-title="QnA Session - 14 Jan 2026"
+              data-url="/livestream/7S4CAZBI06T5jfKO"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xA5H007Bx4I/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 Jan 2026</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="6U7GpO557e8"
+              data-title="QnA Session - 17 Dec 2025"
+              data-url="/livestream/h4HM7fq2cO7tSIFe"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/6U7GpO557e8/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 17 Dec 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="3oGlym5N7z0"
+              data-title="QnA Session - 10 Dec 2025"
+              data-url="/livestream/0LbwV9qpixxQ5NV7"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/3oGlym5N7z0/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 10 Dec 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="wtooKaJkS7o"
+              data-title="QnA Session - 19 Nov 2025"
+              data-url="/livestream/lqh0IAWca1SiTaUm"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/wtooKaJkS7o/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 19 Nov 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="axHesRWvKOU"
+              data-title="QnA Session - 12 Nov 2025"
+              data-url="/livestream/4M6Z43PZ1NCw4MeY"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/axHesRWvKOU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Nov 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="2Xhtepg8S1w"
+              data-title="QnA Session - 15 Oct 2025"
+              data-url="/livestream/8mpmw3KRDlsOgC5J"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/2Xhtepg8S1w/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Oct 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xx1iRZyv6-E"
+              data-title="QnA Session - 08 Oct 2025"
+              data-url="/livestream/fWqS8mD5CH8ktUGP"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xx1iRZyv6-E/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 08 Oct 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="mZoDvsCUoN8"
+              data-title="QnA Session - 17 Sep 2025"
+              data-url="/livestream/bZZUpiD0usiTvFGZ"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/mZoDvsCUoN8/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 17 Sep 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XH-z_z-rG5s"
+              data-title="QnA Session - 16 Sep 2025"
+              data-url="/livestream/6n2tCbOKkS3CZQBb"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XH-z_z-rG5s/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 16 Sep 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="8q1QPRH5WYY"
+              data-title="QnA Session - 20 Aug 2025"
+              data-url="/livestream/szu2w5rMtbisSafw"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/8q1QPRH5WYY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Aug 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GGwDJ52xjJY"
+              data-title="QnA Session - 13 Aug 2025"
+              data-url="/livestream/BkVgY31r63Ku5gmd"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GGwDJ52xjJY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Aug 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="uBvqj-LutfQ"
+              data-title="QnA Session - 16 Jul 2025"
+              data-url="/livestream/nkGrIOwJuinh2sUM"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/uBvqj-LutfQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 16 Jul 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="aMco3eHa9uY"
+              data-title="QnA Session - 09 Jul 2025"
+              data-url="/livestream/uKfOWMG8jGhael32"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/aMco3eHa9uY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 09 Jul 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="mROLg0SPYz8"
+              data-title="QnA Session - 18 Jun 2025"
+              data-url="/livestream/DJMarlnSbpcjQfzD"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/mROLg0SPYz8/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 18 Jun 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="8Ohb5RJX61E"
+              data-title="QnA Session - 11 Jun 2025"
+              data-url="/livestream/94lDq2mAWDNsTJFu"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/8Ohb5RJX61E/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Jun 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XMYCdVWoulQ"
+              data-title="QnA Session - 21 May 2025"
+              data-url="/livestream/5P4et6l3WEZPG3es"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XMYCdVWoulQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 May 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="bHn4wC9hhDo"
+              data-title="QnA Session - 14 May 2025"
+              data-url="/livestream/SxGlWB71I087dxWC"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/bHn4wC9hhDo/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 May 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="LvRMZe1sj9E"
+              data-title="QnA Session - 16 Apr 2025"
+              data-url="/livestream/9kkqXrqhWJHjSKod"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/LvRMZe1sj9E/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 16 Apr 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="sEXWqR7GowU"
+              data-title="QnA Session - 09 Apr 2025"
+              data-url="/livestream/MGJcHUMhMBBvrUJu"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/sEXWqR7GowU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 09 Apr 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="f3Fq-pqNRtU"
+              data-title="QnA Session - 19 Mar 2025"
+              data-url="/livestream/2cfM5ZyBHSPZhjY0"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/f3Fq-pqNRtU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 19 Mar 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="-IGpiIJdlBI"
+              data-title="QnA Session - 12 Mar 2025"
+              data-url="/livestream/Md0QLXJFmPMGmgv7"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/-IGpiIJdlBI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Mar 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XmGaNtjOn1Y"
+              data-title="QnA Session - 19 Feb 2025"
+              data-url="/livestream/2V0oJH3NqJqQikhs"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XmGaNtjOn1Y/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 19 Feb 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="RCCX3EDGX3A"
+              data-title="QnA Session - 12 Feb 2025"
+              data-url="/livestream/RVJ2FE6wYaal8Qq9"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/RCCX3EDGX3A/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Feb 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="E0SukQP7eCQ"
+              data-title="QnA Session - 15 Jan 2025"
+              data-url="/livestream/w9BQTTs9gMdpIW77"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/E0SukQP7eCQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Jan 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="pR7aBp447tw"
+              data-title="QnA Session - 08 Jan 2025"
+              data-url="/livestream/EQKuir9PDExv3cax"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/pR7aBp447tw/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 08 Jan 2025</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="8djMg6ByRnI"
+              data-title="QnA Session - 11 Dec 2024"
+              data-url="/livestream/31x293P1qQyDinYM"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/8djMg6ByRnI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Dec 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="5-FCDaHQ9Ns"
+              data-title="QnA Session - 20 Nov 2024"
+              data-url="/livestream/3z9j6zICxreduNpp"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/5-FCDaHQ9Ns/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Nov 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="T-VSM0cDzrQ"
+              data-title="QnA Session - 13 Nov 2024"
+              data-url="/livestream/CcPJGDq74v6xgDQa"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/T-VSM0cDzrQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Nov 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="dAqZJgY-wIs"
+              data-title="QnA Session - 16 Oct 2024"
+              data-url="/livestream/44fDyOeZHsh5pueK"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/dAqZJgY-wIs/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 16 Oct 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="qs947LRTbac"
+              data-title="QnA Session - 09 Oct 2024"
+              data-url="/livestream/rjW3hdShRRxS497T"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/qs947LRTbac/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 09 Oct 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="1vG6Lw9MEDY"
+              data-title="QnA Session - 18 Sep 2024"
+              data-url="/livestream/QCi3RysckTbty3t9"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/1vG6Lw9MEDY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 18 Sep 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Qlamln3cJzU"
+              data-title="QnA Session - 11 Sep 2024"
+              data-url="/livestream/Pz8r0a6XgjQzUUb8"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Qlamln3cJzU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Sep 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="rqvjz6PHRIc"
+              data-title="QnA Session - 21 Aug 2024"
+              data-url="/livestream/tzKS5wlPSByxFeQB"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/rqvjz6PHRIc/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Aug 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Ia_gmb0jhCM"
+              data-title="QnA Session - 14 Aug 2024"
+              data-url="/livestream/VddXulhzdC9uMoyd"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Ia_gmb0jhCM/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 Aug 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="YesYo5I_wLo"
+              data-title="QnA Session - 17 Jul 2024"
+              data-url="/livestream/5ljNoGeirdG31BuU"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/YesYo5I_wLo/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 17 Jul 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="X63zvZcsJts"
+              data-title="QnA Session - 10 Jul 2024"
+              data-url="/livestream/1jU3gHNZnjWxfTem"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/X63zvZcsJts/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 10 Jul 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="XwCHO4Ugh2A"
+              data-title="QnA Session - 19 Jun 2024"
+              data-url="/livestream/riqqHygto8TpEWGR"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/XwCHO4Ugh2A/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 19 Jun 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="vnwk7HVQzXg"
+              data-title="QnA Session - 12 Jun 2024"
+              data-url="/livestream/hG941lncXGbp4uEJ"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/vnwk7HVQzXg/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Jun 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="B0cPiUOyAjM"
+              data-title="QnA Session - 15 May 2024"
+              data-url="/livestream/EhnavuJSDuHHybDI"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/B0cPiUOyAjM/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 May 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="OItA-5tmMY8"
+              data-title="QnA Session - 08 May 2024"
+              data-url="/livestream/K5rYLAAsRDKpceq6"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/OItA-5tmMY8/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 08 May 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="J1PzT29Migs"
+              data-title="QnA Session - 17 Apr 2024"
+              data-url="/livestream/tECLtv6Wpe5pfnSb"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/J1PzT29Migs/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 17 Apr 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="pdhPOdDlmT4"
+              data-title="QnA Session - 20 Mar 2024"
+              data-url="/livestream/35yn2zUqfUjM0N5h"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/pdhPOdDlmT4/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Mar 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="on29L_KS6jE"
+              data-title="QnA Session - 13 Mar 2024"
+              data-url="/livestream/A6s1pvmJJGH2KeV5"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/on29L_KS6jE/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Mar 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="aQGqKwuLjXw"
+              data-title="QnA Session - 21 Feb 2024"
+              data-url="/livestream/ZzuKKw3cV93NVhTr"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/aQGqKwuLjXw/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Feb 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="zp8lYY6D6Wk"
+              data-title="QnA Session - 14 Feb 2024"
+              data-url="/livestream/C9WQqlWLVXhQJWRQ"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/zp8lYY6D6Wk/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 Feb 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="twdrx0QMe9o"
+              data-title="QnA Session - 17 Jan 2024"
+              data-url="/livestream/6mzaBy1PtAfEh4ZW"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/twdrx0QMe9o/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 17 Jan 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="nle30AcIg98"
+              data-title="QnA Session - 10 Jan 2024"
+              data-url="/livestream/EjY69Ynst5MHvipE"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/nle30AcIg98/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 10 Jan 2024</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ef_NIJJ4g0Y"
+              data-title="QnA Session - 20 Dec 2023"
+              data-url="/livestream/bpwFgRWp3xlHzFAe"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ef_NIJJ4g0Y/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Dec 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="bXLpsM7NGzs"
+              data-title="QnA Session - 15 Nov 2023"
+              data-url="/livestream/QU29E52Uti8vVmCu"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/bXLpsM7NGzs/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Nov 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="6haoEbO76qM"
+              data-title="QnA Session - 08 Nov 2023"
+              data-url="/livestream/tvA2qf4dzhG63zSQ"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/6haoEbO76qM/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 08 Nov 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="yEzgKMUBZYQ"
+              data-title="QnA Session - 18 Oct 2023"
+              data-url="/livestream/WTJM3sbzHacTqJDw"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/yEzgKMUBZYQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 18 Oct 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="WeGnpTuZMt0"
+              data-title="QnA Session - 11 Oct 2023"
+              data-url="/livestream/sG4bLwicIOrqPq8R"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/WeGnpTuZMt0/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Oct 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="tBuFUygqu28"
+              data-title="QnA Session - 20 Sep 2023"
+              data-url="/livestream/wXyFF39jF10gFN2J"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/tBuFUygqu28/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Sep 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="urz2YxDnP6E"
+              data-title="QnA Session - 13 Sep 2023"
+              data-url="/livestream/mhIkWMmPws8pNYJ7"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/urz2YxDnP6E/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Sep 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="3bZlJuJ88iE"
+              data-title="QnA Session - 09 Aug 2023"
+              data-url="/livestream/aukGqoRdcvYMpdMG"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/3bZlJuJ88iE/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 09 Aug 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="9VIDaIHKkoA"
+              data-title="QnA Session - 12 Jul 2023"
+              data-url="/livestream/IjwshKd0MXgrL2VD"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/9VIDaIHKkoA/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Jul 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="swehnpYnvAw"
+              data-title="QnA Session - 21 Jun 2023"
+              data-url="/livestream/2Gk3AtwoIfcRhcFE"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/swehnpYnvAw/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Jun 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ItLEkCtnjbA"
+              data-title="QnA Session - 14 Jun 2023"
+              data-url="/livestream/L6zWXK0bNqnDPlZH"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ItLEkCtnjbA/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 Jun 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="0als1IqHR-Y"
+              data-title="QnA Session - 16 May 2023"
+              data-url="/livestream/060IHCt01mcY4UVU"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/0als1IqHR-Y/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 16 May 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="-OXy9QVZP8g"
+              data-title="QnA Session - 10 May 2023"
+              data-url="/livestream/KSOJTAK9Q12Stdq7"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/-OXy9QVZP8g/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 10 May 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="k3t-a6wGr20"
+              data-title="QnA Session - 19 Apr 2023"
+              data-url="/livestream/AgLd2BwjPm0lvtB0"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/k3t-a6wGr20/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 19 Apr 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="AO2aOkJU8lY"
+              data-title="QnA Session - 15 Mar 2023"
+              data-url="/livestream/rKAgIDebCQGk4iV1"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/AO2aOkJU8lY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Mar 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="Ia3e6qignGI"
+              data-title="QnA Session - 15 Feb 2023"
+              data-url="/livestream/tY07X6fbyEfBzVGE"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/Ia3e6qignGI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Feb 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="uHY_-v4SESw"
+              data-title="QnA Session - 08 Feb 2023"
+              data-url="/livestream/BOXARmwfBsHP6paW"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/uHY_-v4SESw/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 08 Feb 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="5MlJgUNCf7c"
+              data-title="QnA Session - 11 Jan 2023"
+              data-url="/livestream/j7nOWi34c3nLRHfX"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/5MlJgUNCf7c/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 Jan 2023</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="stG1kXq7sWo"
+              data-title="QnA Session - 09 Nov 2022"
+              data-url="/livestream/wOwq5fVnF6339ug5"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/stG1kXq7sWo/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 09 Nov 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="xTAwpoo9-xk"
+              data-title="QnA Session - 12 Oct 2022"
+              data-url="/livestream/DXjSVdQFLfQ1bYux"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/xTAwpoo9-xk/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Oct 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="iflZ7BDOYYI"
+              data-title="QnA Session - 21 Sep 2022"
+              data-url="/livestream/Jl0ni9MNj44mqVdw"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/iflZ7BDOYYI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 21 Sep 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="KOxKsj04cEQ"
+              data-title="QnA Session - 14 Sep 2022"
+              data-url="/livestream/ebhnZxYR4IaGRdYN"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/KOxKsj04cEQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 14 Sep 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="1j0b8WesnbU"
+              data-title="QnA Session - 13 Jul 2022"
+              data-url="/livestream/OMmRuiCZ6lyPVpvS"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/1j0b8WesnbU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 13 Jul 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="ri2x3JLCTpQ"
+              data-title="QnA Session - 22 Jun 2022"
+              data-url="/livestream/NHZGHKA9RG2SCRpC"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/ri2x3JLCTpQ/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 22 Jun 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="PVDv4rpTAH8"
+              data-title="QnA Session - 11 May 2022"
+              data-url="/livestream/gU3ZDXQjQZq9PX4V"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/PVDv4rpTAH8/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 11 May 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="efMkIoiKiKY"
+              data-title="QnA Session - 20 Apr 2022"
+              data-url="/livestream/4Ocm6zNMbkIsgmM2"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/efMkIoiKiKY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 20 Apr 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="fpscLqkvjOI"
+              data-title="QnA Session - 30 Mar 2022"
+              data-url="/livestream/1aWokiod1aUztLAp"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/fpscLqkvjOI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 30 Mar 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="AD29IScrXTI"
+              data-title="QnA Session - 23 Feb 2022"
+              data-url="/livestream/ovZuC8qUBOikxalP"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/AD29IScrXTI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 23 Feb 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="D0hN_NDsJKI"
+              data-title="QnA Session - 12 Jan 2022"
+              data-url="/livestream/GQ3sK4YAJ47f47X4"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/D0hN_NDsJKI/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Jan 2022</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="JXP3lrfQ5Yo"
+              data-title="QnA Session - 22 Dec 2021"
+              data-url="/livestream/pL6WpBfBqnCxVFQi"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/JXP3lrfQ5Yo/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 22 Dec 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="03QKpe6lwyU"
+              data-title="QnA Session - 24 Oct 2021"
+              data-url="/livestream/RB4ge2Yuvn5QlrKf"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/03QKpe6lwyU/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 24 Oct 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="LLfhnURumwA"
+              data-title="QnA Session - 12 Sep 2021"
+              data-url="/livestream/FQvNdizUyc0hNy3n"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/LLfhnURumwA/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 12 Sep 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="GeBWP7VYYcY"
+              data-title="QnA Session - 29 Aug 2021"
+              data-url="/livestream/9IBa2oYQnJYrnU0x"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/GeBWP7VYYcY/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 29 Aug 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-3 col-md-4 col-sm-6">
+        <div class="card shadow">
+                    
+          
+          <a type="button"
+              class="stretched-link video-modal-trigger"
+              data-bs-toggle="modal"
+              data-bs-target="#yt-video-modal"
+              data-yt-video-id="leQy4qITS7A"
+              data-title="QnA Session - 15 Aug 2021"
+              data-url="/livestream/juOk0EIIW8374p83"></a>
+
+          <div class="card-body p-2">
+            <img class="card-img-top" src="https://img.youtube.com/vi/leQy4qITS7A/mqdefault.jpg" alt="" />
+            <strong>QnA Session - 15 Aug 2021</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Shared YouTube Video Modal -->
+<div id="yt-video-modal" class="modal fade" aria-hidden="true" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 80vw; width: 80vw;">
+    <div class="modal-content">
+      <!-- Header -->
+      <div class="modal-header d-flex py-1 align-items-center">
+        <h5 class="modal-title h4">
+          <a id="neobdm-video-url" href="index.html#" target="_blank"></a>
+          <button class="btn" onclick="copyToClipboard(this)" data-copy-value="" id="neobdm-copy-video-url">
+            <i class="fas fa-link"></i>
+          </button>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body p-1">
+        <div class="embed-responsive embed-responsive-16by9">
+          <div id="yt-video-player"></div>
+        </div>
+
+        <div class="progress" style="height: 8px">
+          <div id="yt-video-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progress" 
+            style="width: 0%; transition: width 0.2s ease;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="main-footer text-sm py-2">
+      <!-- To the right -->
+      <div class="float-right d-none d-sm-inline">
+        <strong>#TradeResponsibly</strong>
+      </div>
+      <!-- Default to the left -->
+      <strong>NeoBDM &copy; 2017-2026. All rights reserved.</strong>
+    </footer>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+
+  <script src="../static/js/jquery/jquery.min.js"></script>
+  <script src="../static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/adminlte/adminlte.min.js"></script>
+  <script src="../static/js/toastr/toastr.min.js"></script>
+  <script src="../static/js/toastr/toastr-option.js"></script>
+  <script src="../static/js/selectize/selectize.min.js"></script>  
+  <script src="../static/js/utils/darkmode.js"></script>
+  <script src="../static/js/utils/tooltip.js"></script>
+  <script src="../static/js/utils/sidebar.js"></script>
+  <script src="../static/js/utils/copy.js"></script>
+  <script>
+    $(() => {
+      $.ajax({
+            url: "/dashboard/~get-choices/",
+            type: 'GET',
+            dataType: 'json',
+            error: function() {
+                console.log("Fetch choices error");
+            },
+            success: function(res) {
+              $("#input-ticker").selectize({
+                placeholder: "Input ticker emiten",    
+                onChange: function(tick) {
+                  window.location.replace(`/stock_detail/${tick}`);
+                },
+                options: res
+              });
+            }
+        });
+    })
+  </script>  
+  
+<script src="../static/js/youtube/youtube-player-modal.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  $(document).ready(() => {
+    YouTubePlayerModal.init();
+  });
+</script>
+
+
+  <!-- Modals -->
+     
+</body>
+
+
+</html>

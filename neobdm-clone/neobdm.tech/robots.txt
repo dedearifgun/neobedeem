@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /home/
+Allow: /accounts/signup/
+Allow: /accounts/login/
+Allow: /subscription/
+Allow: /faq/

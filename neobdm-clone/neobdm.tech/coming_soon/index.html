@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+  <meta name="author" content="NeoBDM Technology"> 
+  <meta name="keywords" content="Saham Indikator Bandarmologi NeoBDM Foreign Flow Screening Belajar Analisa Teknikal Chart Indonesia">  
+
+  <meta property="og:title" content="Belajar Analisa Saham Bersama NeoBDM">
+  <meta property="og:description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+
+  <title>NeoBDM | Coming Soon</title>
+
+  <link rel="shortcut icon" href="../static/images/favicon.ico">
+
+  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="../static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="../static/css/adminlte/adminlte.min.css">
+  <link rel="stylesheet" href="../static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../static/css/selectize/selectize.bootstrap5.min.css">    
+  <link rel="stylesheet" href="../static/css/custom/style.css">  
+  
+
+  
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed dark-mode sidebar-collapse">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img src="/static/images/android-chrome-192x192.png" alt="NeoBDM Logo" class="animation__wobble" height="60" width="60">
+    </div> -->
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-light navbar-dark text-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a id="collapse-burger" class="nav-link" data-widget="pushmenu" href="index.html#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+        
+        <li class="nav-item">
+          <div id="dashboard-search-container">
+            <select id="input-ticker" class="form-control form-control-sm" style="width: 175px;">
+            </select>
+          </div>
+          <a id="dashboard-button" type="button" class="btn input-group-text" style="display: none;"><i class="fas fa-eye"></i></a>
+        </li>
+        
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Dark theme -->
+        <li class="nav-item" id="theme-toggle">
+          <a class="nav-link" href="index.html#">
+            <i id="theme-toggle-icon" class="fas fa-sun"></i>
+          </a>
+        </li>
+
+        <!-- Settings Dropdown -->
+        
+        <!-- Settings -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-bs-toggle="dropdown" href="index.html#" aria-expanded="false">
+            <i class="fas fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href="https://neobdm.tech/payments/history/" class="dropdown-item">Payment History</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a href="https://neobdm.tech/users/profile/" class="dropdown-item">Profile</a></li>
+          </ul>
+        </li>
+
+        <!-- Sign out -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://neobdm.tech/accounts/logout/">
+            <i class="fas fa-flip-horizontal fa-sign-out-alt"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Sidebar -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="https://neobdm.tech/home/" class="brand-link">
+        <img src="../static/images/android-chrome-192x192.png" alt="NeoBDM Logo"
+          class="brand-image img-circle elevation-3">
+        <span class="brand-text text-lg font-weight-bold text-yellow">NeoBDM</span>
+      </a>
+
+      <!-- Sidebar -->
+      
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline my-2">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-collapse-hide-child"
+            data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- Home -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/home/" class="nav-link">
+                <i class="nav-icon fas fa-home"></i> 
+                <p>Home</p>
+              </a>
+            </li>            
+            
+            
+            <!-- Subscribe -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/subscription/" class="nav-link">
+                <i class="nav-icon fas fa-shopping-cart"></i>
+                <p>Subscribe</p>
+              </a>
+            </li>
+            
+
+            <!-- Watchlist -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/watchlist/" class="nav-link">
+                <i class="nav-icon fas fa-star text-yellow"></i>
+                <p>Watchlist</p>
+              </a>
+            </li>            
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/dashboard/screener/" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <!-- Screening -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-filter"></i>
+                <p>Screening<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/market_summary/" class="nav-link">
+                    <p>Market Summary</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/sector_activity/" class="nav-link">
+                    <p>Sector Activity</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/rotation_chart/" class="nav-link">
+                    <p>Rotation Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_stalker/" class="nav-link">
+                    <p>Broker Stalker</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Analysis -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                <p>Analysis<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/transaction_chart/" class="nav-link">
+                    <p>Transaction Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/done_detail/" class="nav-link">
+                    <p>Done Detail Visualization</p>
+                  </a>
+                </li>                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/seasonality_table/" class="nav-link">
+                    <p>Seasonality Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/balance_position_chart/" class="nav-link">
+                    <p>Balance Position Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_summary/" class="nav-link">
+                    <p>Broker Summary</p>
+                  </a>
+                </li>                                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/inventory/" class="nav-link">
+                    <p>Inventory Chart</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Experimental -->
+            <!-- <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-flask"></i>
+                <p>Experimental<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">             
+                  <a href="/coming_soon/" class="nav-link">
+                    <p>Volume Price Analysis</p>
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- Money Management -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/calculator/" class="nav-link">
+                <i class="nav-icon fas fa-calculator"></i>
+                <p>Money Management</p>
+              </a>
+            </li>
+            <!-- Recording -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>Recording<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/tutorial/" class="nav-link">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>Tutorial</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/clip/" class="nav-link">
+                    <i class="nav-icon fas fa-cut"></i>
+                    <p>Clip / Highlight</p>
+                  </a>
+                </li>                 
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/livestream/" class="nav-link">
+                    <i class="nav-icon fas fa-podcast"></i>
+                    <p>Livestream</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Archives -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>Archive<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/evaluation/list" class="nav-link">
+                    <i class="nav-icon fas fa-chalkboard-teacher text-green"></i>
+                    <p>Arsip Evaluasi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/qna/list" class="nav-link">
+                    <i class="nav-icon fas fa-question-circle text-green"></i>
+                    <p>Arsip QnA</p>
+                  </a>
+                </li>
+              </ul>
+            </li>            
+            <!-- FAQ -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/faq/" class="nav-link">
+                <i class="nav-icon fas fa-book text-green"></i>
+                <p>FAQ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-hashtag"></i>
+                <p>Social Media<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/neobdm" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-youtube"></i> Youtube</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://t.me/joinchat/6tpUCd6qEwZmN2Jl" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-telegram"></i> Telegram Channel</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-1">
+            <div class="col-sm-6">
+              <h1 class="m-0">Coming Soon</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+<li class="breadcrumb-item"><a href="https://neobdm.tech/home/"><i class="fas fa-home"></i> Home</a></li>
+<li class="breadcrumb-item active">Coming Soon</li>
+
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- /.header -->
+
+      <!-- Content -->
+      <div class="content">
+        
+<div class="container-fluid">
+  <div class="error-page">
+    <h2 class="headline text-warning"><i class="fas fa-file-code"></i></h2>
+
+    <div class="error-content">
+      <h3>Coming Soon.</h3>
+      <p>
+        This feature is under development. Please wait for the exciting news.
+        Meanwhile, you may return to <a href="https://neobdm.tech/home/">homepage</a>.
+      </p>
+    </div>
+    <!-- /.error-content -->
+  </div>
+</div>
+
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="main-footer text-sm py-2">
+      <!-- To the right -->
+      <div class="float-right d-none d-sm-inline">
+        <strong>#TradeResponsibly</strong>
+      </div>
+      <!-- Default to the left -->
+      <strong>NeoBDM &copy; 2017-2026. All rights reserved.</strong>
+    </footer>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+  <script src="../static/js/jquery/jquery.min.js"></script>
+  <script src="../static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/adminlte/adminlte.min.js"></script>
+  <script src="../static/js/toastr/toastr.min.js"></script>
+  <script src="../static/js/toastr/toastr-option.js"></script>
+  <script src="../static/js/selectize/selectize.min.js"></script>  
+  <script src="../static/js/utils/darkmode.js"></script>
+  <script src="../static/js/utils/tooltip.js"></script>
+  <script src="../static/js/utils/sidebar.js"></script>
+  <script src="../static/js/utils/copy.js"></script>
+  <script>
+    $(() => {
+      $.ajax({
+            url: "/dashboard/~get-choices/",
+            type: 'GET',
+            dataType: 'json',
+            error: function() {
+                console.log("Fetch choices error");
+            },
+            success: function(res) {
+              $("#input-ticker").selectize({
+                placeholder: "Input ticker emiten",    
+                onChange: function(tick) {
+                  window.location.replace(`/stock_detail/${tick}`);
+                },
+                options: res
+              });
+            }
+        });
+    })
+  </script>  
+  
+
+  <!-- Modals -->
+     
+</body>
+
+
+</html>

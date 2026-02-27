@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+  <meta name="author" content="NeoBDM Technology"> 
+  <meta name="keywords" content="Saham Indikator Bandarmologi NeoBDM Foreign Flow Screening Belajar Analisa Teknikal Chart Indonesia">  
+
+  <meta property="og:title" content="Belajar Analisa Saham Bersama NeoBDM">
+  <meta property="og:description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+
+  <title>NeoBDM | Done Detail</title>
+
+  <link rel="shortcut icon" href="../static/images/favicon.ico">
+
+  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="../static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="../static/css/adminlte/adminlte.min.css">
+  <link rel="stylesheet" href="../static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../static/css/selectize/selectize.bootstrap5.min.css">    
+  <link rel="stylesheet" href="../static/css/custom/style.css">  
+  
+
+  
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed dark-mode sidebar-collapse">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img src="/static/images/android-chrome-192x192.png" alt="NeoBDM Logo" class="animation__wobble" height="60" width="60">
+    </div> -->
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-light navbar-dark text-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a id="collapse-burger" class="nav-link" data-widget="pushmenu" href="index.html#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+        
+        <li class="nav-item">
+          <div id="dashboard-search-container">
+            <select id="input-ticker" class="form-control form-control-sm" style="width: 175px;">
+            </select>
+          </div>
+          <a id="dashboard-button" type="button" class="btn input-group-text" style="display: none;"><i class="fas fa-eye"></i></a>
+        </li>
+        
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Dark theme -->
+        <li class="nav-item" id="theme-toggle">
+          <a class="nav-link" href="index.html#">
+            <i id="theme-toggle-icon" class="fas fa-sun"></i>
+          </a>
+        </li>
+
+        <!-- Settings Dropdown -->
+        
+        <!-- Settings -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-bs-toggle="dropdown" href="index.html#" aria-expanded="false">
+            <i class="fas fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href="https://neobdm.tech/payments/history/" class="dropdown-item">Payment History</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a href="https://neobdm.tech/users/profile/" class="dropdown-item">Profile</a></li>
+          </ul>
+        </li>
+
+        <!-- Sign out -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://neobdm.tech/accounts/logout/">
+            <i class="fas fa-flip-horizontal fa-sign-out-alt"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Sidebar -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="https://neobdm.tech/home/" class="brand-link">
+        <img src="../static/images/android-chrome-192x192.png" alt="NeoBDM Logo"
+          class="brand-image img-circle elevation-3">
+        <span class="brand-text text-lg font-weight-bold text-yellow">NeoBDM</span>
+      </a>
+
+      <!-- Sidebar -->
+      
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline my-2">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-collapse-hide-child"
+            data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- Home -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/home/" class="nav-link">
+                <i class="nav-icon fas fa-home"></i> 
+                <p>Home</p>
+              </a>
+            </li>            
+            
+            
+            <!-- Subscribe -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/subscription/" class="nav-link">
+                <i class="nav-icon fas fa-shopping-cart"></i>
+                <p>Subscribe</p>
+              </a>
+            </li>
+            
+
+            <!-- Watchlist -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/watchlist/" class="nav-link">
+                <i class="nav-icon fas fa-star text-yellow"></i>
+                <p>Watchlist</p>
+              </a>
+            </li>            
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/dashboard/screener/" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <!-- Screening -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-filter"></i>
+                <p>Screening<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/market_summary/" class="nav-link">
+                    <p>Market Summary</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/sector_activity/" class="nav-link">
+                    <p>Sector Activity</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/rotation_chart/" class="nav-link">
+                    <p>Rotation Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_stalker/" class="nav-link">
+                    <p>Broker Stalker</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Analysis -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                <p>Analysis<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/transaction_chart/" class="nav-link">
+                    <p>Transaction Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">
+                    <p>Done Detail Visualization</p>
+                  </a>
+                </li>                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/seasonality_table/" class="nav-link">
+                    <p>Seasonality Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/balance_position_chart/" class="nav-link">
+                    <p>Balance Position Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_summary/" class="nav-link">
+                    <p>Broker Summary</p>
+                  </a>
+                </li>                                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/inventory/" class="nav-link">
+                    <p>Inventory Chart</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Experimental -->
+            <!-- <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-flask"></i>
+                <p>Experimental<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">             
+                  <a href="/coming_soon/" class="nav-link">
+                    <p>Volume Price Analysis</p>
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- Money Management -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/calculator/" class="nav-link">
+                <i class="nav-icon fas fa-calculator"></i>
+                <p>Money Management</p>
+              </a>
+            </li>
+            <!-- Recording -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>Recording<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/tutorial/" class="nav-link">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>Tutorial</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/clip/" class="nav-link">
+                    <i class="nav-icon fas fa-cut"></i>
+                    <p>Clip / Highlight</p>
+                  </a>
+                </li>                 
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/livestream/" class="nav-link">
+                    <i class="nav-icon fas fa-podcast"></i>
+                    <p>Livestream</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Archives -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>Archive<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/evaluation/list" class="nav-link">
+                    <i class="nav-icon fas fa-chalkboard-teacher text-green"></i>
+                    <p>Arsip Evaluasi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/qna/list" class="nav-link">
+                    <i class="nav-icon fas fa-question-circle text-green"></i>
+                    <p>Arsip QnA</p>
+                  </a>
+                </li>
+              </ul>
+            </li>            
+            <!-- FAQ -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/faq/" class="nav-link">
+                <i class="nav-icon fas fa-book text-green"></i>
+                <p>FAQ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-hashtag"></i>
+                <p>Social Media<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/neobdm" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-youtube"></i> Youtube</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://t.me/joinchat/6tpUCd6qEwZmN2Jl" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-telegram"></i> Telegram Channel</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-1">
+            <div class="col-sm-6">
+              <h1 class="m-0"></h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                
+<li class="breadcrumb-item"><a href="https://neobdm.tech/home/"><i class="fas fa-home"></i> Home</a></li>
+<li class="breadcrumb-item active">Done Detail</li>
+
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- /.header -->
+
+      <!-- Content -->
+      <div class="content">
+        
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 px-1">
+      <div class="card card-outline card-success">
+        <div class="card-header py-1">
+          <h3 id="dd-card-title" class="card-title">Done Detail</h3>
+
+          <div class="card-tools">
+            <button type="button" onclick="update_density()" class="ml-2 btn btn-xs btn-outline-success" style="width: 50px;"><i class="fas fa-undo"></i></button>
+          </div> 
+        </div>
+
+        <div class="card-body p-0">
+          <div id="done-detail-chart" style="min-height: 540px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 px-1">
+      
+      <div class="card card-outline card-success">
+        <div class="card-header py-1">
+          <h3 class="card-title">Daily Inventory</h3>
+          <div class="card-tools">
+            <button type="button" onclick="update_timeframe(1)" class="btn btn-xs btn-success" style="width: 35px;"><strong>1m</strong></button>
+            <button type="button" onclick="update_timeframe(2)" class="btn btn-xs btn-success" style="width: 35px;"><strong>2m</strong></button>
+            <button type="button" onclick="update_timeframe(3)" class="btn btn-xs btn-success" style="width: 35px;"><strong>3m</strong></button>
+            <button type="button" onclick="update_timeframe(5)" class="btn btn-xs btn-success" style="width: 35px;"><strong>5m</strong></button>
+            <button type="button" onclick="update_history()" class="ml-2 btn btn-xs btn-outline-success" style="width: 50px;"><i class="fas fa-undo"></i></button>
+          </div>             
+        </div>
+
+        <div class="card-body p-0">
+          <div id="done-detail-history-chart" style="min-height: 540px;"></div>
+        </div>
+      </div>
+    </div>        
+  </div>    
+
+  <div class="row mb-2">
+    <div class="col-md-10 col-xl-8 col-12 mx-auto border rounded-2 py-1">
+      <form id="update-form" autocomplete="off">
+        <input type="hidden" name="csrfmiddlewaretoken" value="6niqrVMBaH5AsnPMvlBHXensdrDbN8KI6pRO8fIqKcM8NcZw2QFvIWojoqgGgkzF">
+        <div class="row mb-1">
+          <div class="col-2">
+            <label for="density-input" class="mb-0">Density</label>
+          </div>
+          <div class="col-3">
+            <input id="density-input" type="range" onchange="update_density()" class="form-range" min="0" max="6" value="5" name="density" style="width: 150px; height: 0.5rem;">
+          </div>
+          <div class="col-3 border-left">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" onchange="update_density()" name="show_left" value="true">
+              <label class="form-check-label">Tampilkan sisa</label>
+            </div>
+          </div>
+          <div class="col-4 border-left">
+            <div class="form-check form-check-inline form-switch">
+              <label class="form-check-label mr-2">Lot</label>
+              <input id="amount-type-switch" onchange="update_density()" class="form-check-input" type="checkbox" role="switch" name="amount_type" checked>
+              <label class="form-check-label">Value</label>
+            </div>
+          </div>          
+        </div>
+        <div class="row mb-1">
+          <div class="col-2">
+            <label for="broker-input" class="mb-0">Brokers</label>
+          </div>
+          <div class="col-8">
+            <select id="chosen-brokers" class="form-control form-control-sm mb-1" style="min-width: 420px;" multiple></select>
+          </div>
+          <div class="col-2">
+            <button type="button" onclick="update_density_and_history()" class="ml-2 btn btn-xs btn-outline-success" style="width: 50px;"><i class="fas fa-paste"></i></button>                    
+          </div>          
+        </div>        
+      </form>
+    </div>
+  </div>
+  <p class="text-muted text-center">*Pastikan sudah memperbolehkan <i>browser permission</i> untuk mengakses clipboard <i class="fas fa-clipboard"></i></p>
+</div>
+
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="main-footer text-sm py-2">
+      <!-- To the right -->
+      <div class="float-right d-none d-sm-inline">
+        <strong>#TradeResponsibly</strong>
+      </div>
+      <!-- Default to the left -->
+      <strong>NeoBDM &copy; 2017-2026. All rights reserved.</strong>
+    </footer>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+
+  <script src="../static/js/jquery/jquery.min.js"></script>
+  <script src="../static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/adminlte/adminlte.min.js"></script>
+  <script src="../static/js/toastr/toastr.min.js"></script>
+  <script src="../static/js/toastr/toastr-option.js"></script>
+  <script src="../static/js/selectize/selectize.min.js"></script>  
+  <script src="../static/js/utils/darkmode.js"></script>
+  <script src="../static/js/utils/tooltip.js"></script>
+  <script src="../static/js/utils/sidebar.js"></script>
+  <script src="../static/js/utils/copy.js"></script>
+  <script>
+    $(() => {
+      $.ajax({
+            url: "/dashboard/~get-choices/",
+            type: 'GET',
+            dataType: 'json',
+            error: function() {
+                console.log("Fetch choices error");
+            },
+            success: function(res) {
+              $("#input-ticker").selectize({
+                placeholder: "Input ticker emiten",    
+                onChange: function(tick) {
+                  window.location.replace(`/stock_detail/${tick}`);
+                },
+                options: res
+              });
+            }
+        });
+    })
+  </script>  
+  
+<script src="../static/js/highchart/highstock.js"></script>
+<script>
+  var Highstock = Highcharts;
+  Highcharts = null;
+</script>
+<script src="../static/js/highchart/highcharts.js"></script>
+<script src="../static/js/highchart/sankey.js"></script>
+<script src="../static/js/highchart/accessibility.src.js"></script>
+<script src="../static/js/highchart/annotations.src.js"></script>
+
+<script>
+  $(() => {
+      $('#dashboard-button').show();
+      $("#dashboard-search-container").hide();
+      $('#dashboard-button').click(() => {
+          $("#dashboard-search-container").show(300);
+          $('#dashboard-button').hide();
+      });
+  })
+  </script>
+
+<script type="text/javascript">
+    const colors = ['#6A76FC', '#FED4C4', '#FE00CE', '#0DF9FF', '#F6F926', '#FF9616', '#479B55', '#EEA6FB', '#DC587D', '#D626FF', '#6E899C', '#00B5F7', '#B68E00', '#C9FBE5', '#FF0092', '#22FFA7', '#E3EE9E', '#86CE00', '#BC7196', '#7E7DCD', '#FC6955', '#E48F72']
+    const histTemplate = []
+    histTemplate.push({
+      data: [],
+      name: "price",
+      type: 'candlestick',
+      yAxis: 0
+    })
+    colors.forEach((val) => {
+      histTemplate.push({
+        data: [],
+        name: "",
+        color: val,
+        marker: {enabled: false, states: {hover: {enabled: false}}},
+        dataGrouping: {approximation: "close"},
+        step: "left",
+        lineWidth: 2,
+        yAxis: 1
+      })
+    })
+
+    const ddChart = Highcharts.chart('done-detail-chart', {
+        title: {
+            text: ''
+        },
+        tooltip: {
+          formatter: function () {
+              var value = "sum" in this.point ? this.point.sum : this.point.weight
+              var label = "from" in this.point ? `${this.point.from} → ${this.point.to}` : this.point.id
+              if ($("#amount-type-switch").is(":checked")) {
+                if (value > 1000000000) {
+                  value = (value / 1000000000).toFixed(2);
+                  return `${label}: Rp ${value}M`;
+                } else {
+                  value = (value / 1000000).toFixed(1);
+                  return `${label}: Rp ${value}jt`;
+                }
+              } else {
+                if (value > 1000000) {
+                  value = (value / 1000000).toFixed(2);
+                  return `${label}: ${value}jt lot`;
+                } else {
+                  value = (value / 1000).toFixed(1);
+                  return `${label}: ${value}rb lot`;
+                }
+              }
+          }          
+        },
+        chart: {
+            backgroundColor: "#131722"
+        },
+        series: [{
+            keys: ['from', 'to', 'weight'],
+            data: [],
+            type: 'sankey',
+            name: 'Done Detail',
+            nodeWidth: 50
+        }],
+        credits: {
+            text: "NeoBDM Technology"
+        }
+    });
+
+    const ddHistoryChart = Highstock.stockChart('done-detail-history-chart', {
+      title: "",
+      legend: { 
+        layout: "vertical",
+        enabled: true,
+        align: "right",
+        verticalAlign: "top",
+        itemStyle: {color: "#ffffff"},
+        symbolRadius: 0,
+        itemHoverStyle: {"color": "#f0f3fa80"}
+      },
+      plotOptions: {
+        candlestick: {
+          color: 'red',
+          lineColor: 'red',
+          upColor: 'green',
+          upLineColor: 'green',
+          dataGrouping: {units: [['minute', [1]]]}          
+        },
+        dataGrouping: {units: [['minute', [1]]]}
+      },      
+      rangeSelector: {
+        enabled: false
+      },
+      scrollbar: {
+        enabled: false
+      },
+      navigator: {
+        enabled: false
+      },
+      tooltip: {
+        split: false,
+        shared: false,
+        formatter: function(tooltip) {
+          var date = Highcharts.dateFormat('%H:%M:%S', this.x)
+          return `<span style="font-size: 10px">${date}</span><br/><span style="color:${this.series.color}">●</span> ${this.series.name}: <b>${this.y}</b>`;
+        }                 
+      },    
+      chart: {
+        backgroundColor: "#131722"
+      },
+      series: histTemplate,
+      xAxis: [
+        {
+          type: "datetime",
+          crosshair: false,
+          labels: {
+              style: {color: "#ffffff"}   
+          },
+          tickInterval: 30*60*1000 //30min
+        }
+      ],
+      yAxis: [
+        {
+          labels: {style: {color: "#ffffff"}, enabled: false},
+          lineWidth: 1,
+          borderColor: "#ffffff",
+          endOnTick: true,
+          showLastLabel: true,
+          gridLineColor: "#f0f3fa20"
+        }, 
+        {
+          title: {text: "lot", rotation: -90, style: {color: "#ffffff"}},
+          labels: {style: {color: "#ffffff"}},
+          opposite: false,            
+          lineWidth: 1,
+          borderColor: "#ffffff",
+          endOnTick: true,
+          showLastLabel: true,
+          gridLineColor: "#f0f3fa20"
+        }
+      ],
+      credits: {
+        text: "NeoBDM Technology"
+      }      
+    })    
+
+    function getFormData() {
+      var form = $("#update-form").serializeArray();
+      var form_data = {};
+      $.each(form, function(i, v) {form_data[v.name] = v.value});
+      return form_data;
+    }
+
+    async function updateHandler(update_density, update_history) {
+      var form_data = getFormData();
+      form_data["dd"] = await navigator.clipboard.readText();
+      form_data["chosen_brokers"] = $("#chosen-brokers").val();
+      form_data["update_density"] = update_density;
+      form_data["update_history"] = update_history;
+
+      $.ajax({
+        type: "POST",
+        url: "/done_detail/~update",
+        content_type: 'application/json',
+        data: form_data,
+        success: (data) => {
+          if (data.success) {
+            if (update_density) {
+              ddChart.update({
+                series: [{
+                    keys: ['from', 'to', 'weight'],
+                    data: data.sankey,
+                    type: 'sankey',
+                    name: 'Done Detail',
+                    nodeWidth: 50
+                }]
+              });
+            }
+
+            if (update_history) {
+              ddHistoryChart.update({series: histTemplate});
+              ddHistoryChart.update({series: data.history});
+            }
+
+            $("#dd-card-title").text(`${data.stock} Done Detail`)
+          } else {
+            toastr.error('Data is invalid');
+          }
+        }
+      })
+    }
+
+    async function update_density() {
+      updateHandler(true, false);
+    }
+
+    async function update_density_and_history() {
+      updateHandler(true, true);
+    }
+
+    async function update_history() {
+      updateHandler(false, true);
+    }    
+
+    function update_timeframe(tf) {
+      ddHistoryChart.update({
+        plotOptions: {
+          candlestick: {
+            dataGrouping: {units: [['minute', [tf]]]}          
+          },
+          dataGrouping: {units: [['minute', [tf]]]}
+        }
+      });
+    }
+
+    var $select = $("#chosen-brokers").selectize({
+      placeholder: "Pilih broker",
+      options: [{'value': 'AUTO', 'text': 'AUTO'}, {'value': 'AD', 'text': 'AD'}, {'value': 'AF', 'text': 'AF'}, {'value': 'AG', 'text': 'AG'}, {'value': 'AH', 'text': 'AH'}, {'value': 'AI', 'text': 'AI'}, {'value': 'AK', 'text': 'AK'}, {'value': 'AN', 'text': 'AN'}, {'value': 'AO', 'text': 'AO'}, {'value': 'AP', 'text': 'AP'}, {'value': 'AR', 'text': 'AR'}, {'value': 'AT', 'text': 'AT'}, {'value': 'AZ', 'text': 'AZ'}, {'value': 'BB', 'text': 'BB'}, {'value': 'BF', 'text': 'BF'}, {'value': 'BK', 'text': 'BK'}, {'value': 'BQ', 'text': 'BQ'}, {'value': 'BR', 'text': 'BR'}, {'value': 'BS', 'text': 'BS'}, {'value': 'CC', 'text': 'CC'}, {'value': 'CD', 'text': 'CD'}, {'value': 'CP', 'text': 'CP'}, {'value': 'CS', 'text': 'CS'}, {'value': 'DD', 'text': 'DD'}, {'value': 'DH', 'text': 'DH'}, {'value': 'DM', 'text': 'DM'}, {'value': 'DP', 'text': 'DP'}, {'value': 'DR', 'text': 'DR'}, {'value': 'DU', 'text': 'DU'}, {'value': 'DX', 'text': 'DX'}, {'value': 'EL', 'text': 'EL'}, {'value': 'EP', 'text': 'EP'}, {'value': 'ES', 'text': 'ES'}, {'value': 'FO', 'text': 'FO'}, {'value': 'FS', 'text': 'FS'}, {'value': 'FZ', 'text': 'FZ'}, {'value': 'GA', 'text': 'GA'}, {'value': 'GI', 'text': 'GI'}, {'value': 'GR', 'text': 'GR'}, {'value': 'GW', 'text': 'GW'}, {'value': 'HD', 'text': 'HD'}, {'value': 'HP', 'text': 'HP'}, {'value': 'IC', 'text': 'IC'}, {'value': 'ID', 'text': 'ID'}, {'value': 'IF', 'text': 'IF'}, {'value': 'IH', 'text': 'IH'}, {'value': 'II', 'text': 'II'}, {'value': 'IN', 'text': 'IN'}, {'value': 'IP', 'text': 'IP'}, {'value': 'IT', 'text': 'IT'}, {'value': 'IU', 'text': 'IU'}, {'value': 'JB', 'text': 'JB'}, {'value': 'KI', 'text': 'KI'}, {'value': 'KK', 'text': 'KK'}, {'value': 'KZ', 'text': 'KZ'}, {'value': 'LG', 'text': 'LG'}, {'value': 'LH', 'text': 'LH'}, {'value': 'LS', 'text': 'LS'}, {'value': 'MG', 'text': 'MG'}, {'value': 'MI', 'text': 'MI'}, {'value': 'MK', 'text': 'MK'}, {'value': 'MU', 'text': 'MU'}, {'value': 'NI', 'text': 'NI'}, {'value': 'OD', 'text': 'OD'}, {'value': 'OK', 'text': 'OK'}, {'value': 'PC', 'text': 'PC'}, {'value': 'PD', 'text': 'PD'}, {'value': 'PF', 'text': 'PF'}, {'value': 'PG', 'text': 'PG'}, {'value': 'PI', 'text': 'PI'}, {'value': 'PO', 'text': 'PO'}, {'value': 'PP', 'text': 'PP'}, {'value': 'PS', 'text': 'PS'}, {'value': 'QA', 'text': 'QA'}, {'value': 'RB', 'text': 'RB'}, {'value': 'RF', 'text': 'RF'}, {'value': 'RG', 'text': 'RG'}, {'value': 'RO', 'text': 'RO'}, {'value': 'RS', 'text': 'RS'}, {'value': 'RX', 'text': 'RX'}, {'value': 'SA', 'text': 'SA'}, {'value': 'SC', 'text': 'SC'}, {'value': 'SF', 'text': 'SF'}, {'value': 'SH', 'text': 'SH'}, {'value': 'SQ', 'text': 'SQ'}, {'value': 'SS', 'text': 'SS'}, {'value': 'TF', 'text': 'TF'}, {'value': 'TP', 'text': 'TP'}, {'value': 'TS', 'text': 'TS'}, {'value': 'TX', 'text': 'TX'}, {'value': 'XA', 'text': 'XA'}, {'value': 'XC', 'text': 'XC'}, {'value': 'XL', 'text': 'XL'}, {'value': 'YB', 'text': 'YB'}, {'value': 'YJ', 'text': 'YJ'}, {'value': 'YO', 'text': 'YO'}, {'value': 'YP', 'text': 'YP'}, {'value': 'YU', 'text': 'YU'}, {'value': 'ZP', 'text': 'ZP'}, {'value': 'ZR', 'text': 'ZR'}],
+      maxItems: 20,
+      items: ['AUTO']
+    });    
+</script>
+
+
+  <!-- Modals -->
+     
+</body>
+
+
+</html>

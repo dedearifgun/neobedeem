@@ -1,0 +1,385 @@
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #ffffff11; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff5b; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent; 
+}
+
+/* Telegram */
+.telegram {
+    background-color: #0088cc;
+    color: #ffffff;
+}
+
+/* Image Overlay */
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail .thumbnail-image {
+    display: block;
+    width: 100%;
+}
+
+.thumbnail .thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+/* Custom Fontawesome */
+.fa-xxs {
+    font-size: .65em;
+}
+
+/* Custom Dark Mode */
+.dark-mode .text-yellow,
+.text-yellow {
+    color: yellow!important;
+}
+
+.dark-mode .hr {
+    border-color: gray;
+}
+
+/* Custom widths */
+.w-10 {
+    width: 10%!important;
+}
+
+.w-15 {
+    width: 15%!important;
+}
+
+.w-30 {
+    width: 30%!important;
+}
+
+.w-40 {
+    width: 40%!important;
+}
+
+.w-90 {
+    width: 90%!important;
+}
+
+/* Custom rounded */
+.rounded-15 {
+    border-radius: 15px
+}
+
+.rounded-top-15 {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.rounded-left-15 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+/* Custom background color */
+.dark-mode .btn {
+    color: #ffffff;
+}
+
+.bg-m {
+    color: #000;
+    background-color: #FECB52;
+}
+
+.bg-nr {
+    color: #000;
+    background-color: #8C564B;
+}
+
+.bg-s {
+    color: #000;
+    background-color: #325A9B;
+}
+
+.bg-f {
+    color: #000;
+    background-color: #AB63FA;
+}
+
+.bg-z {
+    color: #000;
+    background-color: #FF6692;
+}
+
+
+.dark-mode .bg-m {
+    color: #000;
+    background-color: #FECB52;
+}
+
+.dark-mode .bg-nr {
+    color: #000;
+    background-color: #BF897E;
+}
+
+.dark-mode .bg-s {
+    color: #000;
+    background-color: #7FA7E8;
+}
+
+.dark-mode .bg-f {
+    color: #000;
+    background-color: #AB63FA;
+}
+
+.dark-mode .bg-z {
+    color: #000;
+    background-color: #FF6692;
+}
+
+/* Custom Button color by method */
+.dark-mode .page-item .page-link {
+    color: #ffffff;
+}
+
+.dark-mode .page-item:not(.active) .page-link:hover,
+.dark-mode .page-item .page-link:hover {
+    color: #ffffff;
+}
+
+.btn-outline-m,
+.dark-mode .btn-outline-m {
+    color: #FECB52;
+    border-color: #FECB52;
+}
+
+.btn-outline-nr,
+.dark-mode .btn-outline-nr {
+    color: #BF897E;
+    border-color: #BF897E;
+}
+
+.btn-outline-s,
+.dark-mode .btn-outline-s {
+    color: #7FA7E8;
+    border-color: #7FA7E8;
+}
+
+.btn-outline-f,
+.dark-mode .btn-outline-f {
+    color: #AB63FA;
+    border-color: #AB63FA;
+}
+
+.btn-outline-z,
+.dark-mode .btn-outline-z {
+    color: #FF6692;
+    border-color: #FF6692;
+}
+
+.btn-outline-i,
+.dark-mode .btn-outline-i {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-m:hover,
+.btn-check:checked+.btn-outline-m {
+    color: #FFF;
+    background-color: #FECB52;
+    border-color: #FECB52;
+}
+
+.btn-outline-nr:hover,
+.btn-check:checked+.btn-outline-nr {
+    color: #FFF;
+    background-color: #BF897E;
+    border-color: #BF897E;
+}
+
+.btn-outline-s:hover,
+.btn-check:checked+.btn-outline-s {
+    color: #FFF;
+    background-color: #7FA7E8;
+    border-color: #7FA7E8;
+}
+
+.btn-outline-f:hover,
+.btn-check:checked+.btn-outline-f {
+    color: #FFF;
+    background-color: #AB63FA;
+    border-color: #AB63FA;
+}
+
+.btn-outline-z:hover,
+.btn-check:checked+.btn-outline-z {
+    color: #FFF;
+    background-color: #FF6692;
+    border-color: #FF6692;
+}
+
+.btn-outline-i:hover,
+.btn-check:checked+.btn-outline-i {
+    color: #FFF;
+    background-color: #636EFA;
+    border-color: #636EFA;
+}
+
+
+/* Custom Dash Styling */
+button.next-page,
+button.previous-page,
+button.first-page,
+button.last-page {
+    border-radius: 10px;
+}
+
+.dark-mode .dash-table-tooltip {
+    background-color: #454d55!important;
+}
+
+
+.dark-mode .Select, 
+.dark-mode .Select div,
+.dark-mode .Select input,
+.dark-mode .Select span,
+.dark-mode .DateInput_input,
+.dark-mode .DayPickerKeyboardShortcuts_panel,
+.dark-mode .has-value.Select--single>.Select-control .Select-value .Select-value-label,
+.dark-mode .Select.has-value.Select--single>.Select-control .Select-value .Select-value-label,
+.dark-mode .Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+    background-color: #343a40;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.dark-mode .DateInput_input {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+
+
+.dark-mode .DateRangePickerInput__withBorder {
+    border: 1px solid #6c757d;
+}
+
+
+.radio-group .form-check {
+    padding-left: 0;
+}
+
+.radio-group .btn-group > .form-check:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.radio-group .btn-group > .form-check:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+
+
+/* Sidebar Search */
+/* Search bar input should be visible when hover/focused on the sidebar-mini */
+.sidebar-collapse.sidebar-mini .main-sidebar.sidebar-focused .form-control-sidebar, .sidebar-collapse.sidebar-mini .main-sidebar:hover .form-control-sidebar {
+    display: inline-block;
+}
+
+/* The sidebar addon (input group append) should be visible when hover/focused on the sidebar-mini */
+.sidebar-collapse.sidebar-mini .main-sidebar.sidebar-focused .form-control-sidebar ~ .input-group-append, .sidebar-collapse.sidebar-mini .main-sidebar:hover .form-control-sidebar ~ .input-group-append {
+    display: flex;
+}
+
+/* The search bar results list should be visible when hover/focused on the sidebar-mini */
+.sidebar-collapse.sidebar-mini .main-sidebar.sidebar-focused .sidebar-search-open .sidebar-search-results, .sidebar-collapse.sidebar-mini .main-sidebar:hover .sidebar-search-open .sidebar-search-results {
+    display: inline-block;
+}
+
+/* The search bar results list should be hidden when sidebar-mini is collapsed */
+.sidebar-mini.sidebar-collapse .nav-sidebar .sidebar-search-results {
+    display: none;
+}
+
+/* Custom Form Select */
+.form-dropdown,
+.dark-mode .form-dropdown {
+    padding: 0.25rem 1rem 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 5px;
+}
+
+.form-dropdown {
+    border-color: #ced4da;
+}
+
+/* Datatable */
+.dark-mode table.dataTable thead tr>.dtfc-fixed-left,
+.dark-mode table.dataTable thead tr>.dtfc-fixed-right {
+    z-index: 1;
+    background-color: #212529;
+}
+
+.dark-mode table.dataTable tbody tr>.dtfc-fixed-left,
+.dark-mode table.dataTable tbody tr>.dtfc-fixed-right {
+    z-index: 1;
+    background-color: #212529;
+}
+
+.dark-mode .selectize-dropdown,
+.dark-mode .selectize-input,
+.dark-mode .selectize-input input,
+.dark-mode .selectize-control.single .selectize-input.input-active {
+    color: #ffffff;
+    background-color: #343a40;
+    border-color: #00bc8c;
+}
+
+.dark-mode .selectize-dropdown .active {
+    background-color: #85d482;
+}
+
+/* Tabulator */
+#table-custom-pagination .tabulator-page {
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin: 0 4px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* active page */
+#table-custom-pagination .tabulator-page.active {
+  background: #3f6791;
+  color: #fff;
+  border-color: #3f6791;
+}
+
+/* hover */
+#table-custom-pagination .tabulator-page:hover {
+  background: #e9ecef;
+}

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Neobdm adalah sebuah tools screening dan analisa saham">
+  <meta name="keywords" content="Saham, Bandarmologi, neobdm, belajar, Analisa, Teknikal, Chart, Indonesia">  
+  <title>NeoBDM | Sign In</title>
+
+  <link rel="shortcut icon" href="../../static/images/favicon.ico">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="../../static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="../../static/css/adminlte/adminlte.min.css">
+  <link rel="stylesheet" href="../../static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../../static/css/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../../static/css/home/style.css">
+</head>
+
+<body class="hold-transition login-page dark-mode">
+  <div id="ambient-background"></div>
+  <div class="login-box">
+    
+
+<div class="card card-outline card-success">
+  <div class="card-header">
+    <h3>Sign in</h3>
+  </div>  
+  <div class="card-body">
+    <form class="login" method="POST" action="index.html">
+      <input type="hidden" name="csrfmiddlewaretoken" value="nM8NysUJK6CnwIcuXesMiFuGhSUV8UDvYDR61SWUw75FbeO4F0pSGgSfqwUSnyhk">
+
+      
+
+      
+
+
+    
+    <div id="div_id_login" class="form-group">
+        
+        
+        <label for="id_login" class=" requiredField">
+                Login<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div>
+                    
+                        
+                            <input type="text" name="login" placeholder="Username or email" autocomplete="email" class="textinput form-control" required id="id_login">
+                        
+                    
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+      
+      <div id="div_id_password" class="form-group">
+          <label for="id_password" class=" requiredField">
+              Password<span class="asteriskField">*</span>
+          </label>
+          <div class="input-group mb-3">
+              <input type="password" name="password" placeholder="Password" autocomplete="current-password"
+                  class="passwordinput form-control" required="" aria-describedby="togglePassword" id="id_password">
+              <span id="togglePassword" class="input-group-text"><i class="fas fa-eye"></i></span>
+          </div>
+      </div>   
+
+      
+      <button class="primaryAction btn btn-primary" type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <div class="card-footer">
+    No account? <a href="../signup/index.html">Sign up</a> here.<br>
+    <span class="form-text text-muted"><a href="../password/reset/index.html">Forgot password?</a></span>
+  </div>
+</div>
+
+    
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+
+  <script src="../../static/js/jquery/jquery.min.js"></script>
+  <script src="../../static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="../../static/js/adminlte/adminlte.min.js"></script>
+  <script src="../../static/js/toastr/toastr.min.js"></script>
+  <script src="../../static/js/toastr/toastr-option.js"></script>
+  <script src="../../static/js/particles/particles.min.js"></script>
+  <script>
+    particlesJS.load('ambient-background', "/static/js/particles/config.json");
+  </script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("id_password");
+
+    if (togglePassword && passwordInput) {
+      togglePassword.addEventListener("click", () => {
+        const isPassword = passwordInput.getAttribute("type") === "password";
+        passwordInput.setAttribute("type", isPassword ? "text" : "password");
+        togglePassword.innerHTML = isPassword 
+          ? '<i class="fas fa-eye-slash"></i>' 
+          : '<i class="fas fa-eye"></i>';
+      });
+    }
+  });
+</script>
+
+
+  <!-- Modals -->
+     
+</body>
+
+</html>

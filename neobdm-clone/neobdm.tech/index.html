@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Neobdm adalah sebuah tools screening dan analisa saham">
+  <meta name="keywords" content="Saham, Bandarmologi, neobdm, belajar, Analisa, Teknikal, Chart, Indonesia">  
+  <title>Welcome to NeoBDM</title>
+
+  <link rel="shortcut icon" href="static/images/favicon.ico">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome/all.min.css"> 
+  <link rel="stylesheet" href="static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="static/css/home/style.css">
+  
+</head>
+
+<body>
+  <div id="ambient-background"></div>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="fixed-top navbar navbar-expand navbar-dark bg-dark py-3">
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ms-auto">
+        <!-- Sign in -->
+        <li class="nav-item px-1">
+          <a class="btn btn-outline-yellow rounded-pill" href="accounts/login/index.html">Sign In</a>
+        </li>
+
+        <!-- Sign up -->
+        <li class="nav-item px-1">
+          <a class="btn btn-yellow rounded-pill" href="accounts/signup/index.html">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper align-items-center justify-content-center">
+      <!-- Content -->
+      <div class="content text-center">
+        <h1 class="text-logo"><img class="logo" src="static/images/android-chrome-192x192.png" alt="NeoBDM Logo">NeoBDM</h1>
+        <h1><span id="typed"></span></h1>
+        <a class="btn btn-lg btn-outline-yellow rounded-pill my-4" href="accounts/signup/index.html">Start Free Trial</a>
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="fixed-bottom bg-dark text-yellow py-2 px-3">
+      <!-- To the right -->
+      <div class="float-end d-none d-sm-inline">
+        <strong>#TradeResponsibly</strong>
+      </div>
+      <!-- Default to the left -->
+      <strong>NeoBDM &copy; 2017-2026. All rights reserved.</strong>
+    </footer>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+  <script src="static/js/jquery/jquery.min.js"></script>
+  <script src="static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="static/js/toastr/toastr.min.js"></script>
+  <script src="static/js/toastr/toastr-option.js"></script>
+  <script src="static/js/particles/particles.min.js"></script>
+  <script src="static/js/typed/typed.min.js"></script>
+  <script>
+    particlesJS.load('ambient-background', "/static/js/particles/config.json");
+  </script>
+  <script>
+    var typed = new Typed('#typed', {
+      strings: [
+        'Video Edukasi dan Livestream Mingguan',
+        'Screening Top akumulasi harian',
+        'Analisa Transaksi (Bandarmologi, Sultanmology, dll)',
+        'Screening Aktivitas Sektoral',
+        'Sesi curhat dan evaluasi',
+        'Kalkulator Money Management',
+        'Peta kepemilikan Saham',
+        'Seasonality saham dan indeks'
+      ],
+      typeSpeed: 40,
+      backDelay: 2000,
+      smartBackspace: true,
+      loop: true
+    });
+  </script>
+  
+
+  <!-- Modals -->
+       
+</body>
+
+</html>

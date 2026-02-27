@@ -1,0 +1,1436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+  <meta name="author" content="NeoBDM Technology"> 
+  <meta name="keywords" content="Saham Indikator Bandarmologi NeoBDM Foreign Flow Screening Belajar Analisa Teknikal Chart Indonesia">  
+
+  <meta property="og:title" content="Belajar Analisa Saham Bersama NeoBDM">
+  <meta property="og:description" content="NeoBDM menawarkan fitur analisa transaksi saham Indonesia dari metode Bandarmologi dan Foreign Flow, Kepemilikan saham, Momentum dan seasonality. Selain screening saham, Anda juga dapat belajar Analisa Teknikal, Risk dan Money Management, dan Psikologi Trading dengan fasilitas Livestream yang disediakan oleh NeoBDM.">
+
+  <title>NeoBDM | Dashboard</title>
+
+  <link rel="shortcut icon" href="../../static/images/favicon.ico">
+
+  
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="../../static/css/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="../../static/css/adminlte/adminlte.min.css">
+  <link rel="stylesheet" href="../../static/css/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../../static/css/selectize/selectize.bootstrap5.min.css">    
+  <link rel="stylesheet" href="../../static/css/custom/style.css">  
+  
+<link rel="stylesheet" href="../../static/css/tabulator/tabulator_custom.css">
+
+
+  
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed dark-mode sidebar-collapse">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img src="/static/images/android-chrome-192x192.png" alt="NeoBDM Logo" class="animation__wobble" height="60" width="60">
+    </div> -->
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-light navbar-dark text-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a id="collapse-burger" class="nav-link" data-widget="pushmenu" href="index.html#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+        
+        <li class="nav-item">
+          <div id="dashboard-search-container">
+            <select id="input-ticker" class="form-control form-control-sm" style="width: 175px;">
+            </select>
+          </div>
+          <a id="dashboard-button" type="button" class="btn input-group-text" style="display: none;"><i class="fas fa-eye"></i></a>
+        </li>
+        
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Dark theme -->
+        <li class="nav-item" id="theme-toggle">
+          <a class="nav-link" href="index.html#">
+            <i id="theme-toggle-icon" class="fas fa-sun"></i>
+          </a>
+        </li>
+
+        <!-- Settings Dropdown -->
+        
+        <!-- Settings -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-bs-toggle="dropdown" href="index.html#" aria-expanded="false">
+            <i class="fas fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href="https://neobdm.tech/payments/history/" class="dropdown-item">Payment History</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a href="https://neobdm.tech/users/profile/" class="dropdown-item">Profile</a></li>
+          </ul>
+        </li>
+
+        <!-- Sign out -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://neobdm.tech/accounts/logout/">
+            <i class="fas fa-flip-horizontal fa-sign-out-alt"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Sidebar -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="https://neobdm.tech/home/" class="brand-link">
+        <img src="../../static/images/android-chrome-192x192.png" alt="NeoBDM Logo"
+          class="brand-image img-circle elevation-3">
+        <span class="brand-text text-lg font-weight-bold text-yellow">NeoBDM</span>
+      </a>
+
+      <!-- Sidebar -->
+      
+      <div class="sidebar">
+        <!-- SidebarSearch Form -->
+        <div class="form-inline my-2">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-collapse-hide-child"
+            data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- Home -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/home/" class="nav-link">
+                <i class="nav-icon fas fa-home"></i> 
+                <p>Home</p>
+              </a>
+            </li>            
+            
+            
+            <!-- Subscribe -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/subscription/" class="nav-link">
+                <i class="nav-icon fas fa-shopping-cart"></i>
+                <p>Subscribe</p>
+              </a>
+            </li>
+            
+
+            <!-- Watchlist -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/watchlist/" class="nav-link">
+                <i class="nav-icon fas fa-star text-yellow"></i>
+                <p>Watchlist</p>
+              </a>
+            </li>            
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <!-- Screening -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-filter"></i>
+                <p>Screening<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/market_summary/" class="nav-link">
+                    <p>Market Summary</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/sector_activity/" class="nav-link">
+                    <p>Sector Activity</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/rotation_chart/" class="nav-link">
+                    <p>Rotation Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_stalker/" class="nav-link">
+                    <p>Broker Stalker</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Analysis -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-chart-line"></i>
+                <p>Analysis<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/transaction_chart/" class="nav-link">
+                    <p>Transaction Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/done_detail/" class="nav-link">
+                    <p>Done Detail Visualization</p>
+                  </a>
+                </li>                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/seasonality_table/" class="nav-link">
+                    <p>Seasonality Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/balance_position_chart/" class="nav-link">
+                    <p>Balance Position Chart</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/broker_summary/" class="nav-link">
+                    <p>Broker Summary</p>
+                  </a>
+                </li>                                
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/inventory/" class="nav-link">
+                    <p>Inventory Chart</p>
+                  </a>
+                </li>                
+              </ul>
+            </li>
+            <!-- Experimental -->
+            <!-- <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-flask"></i>
+                <p>Experimental<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">             
+                  <a href="/coming_soon/" class="nav-link">
+                    <p>Volume Price Analysis</p>
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- Money Management -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/calculator/" class="nav-link">
+                <i class="nav-icon fas fa-calculator"></i>
+                <p>Money Management</p>
+              </a>
+            </li>
+            <!-- Recording -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>Recording<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/tutorial/" class="nav-link">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>Tutorial</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/clip/" class="nav-link">
+                    <i class="nav-icon fas fa-cut"></i>
+                    <p>Clip / Highlight</p>
+                  </a>
+                </li>                 
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/livestream/" class="nav-link">
+                    <i class="nav-icon fas fa-podcast"></i>
+                    <p>Livestream</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Archives -->
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>Archive<i class="right fas fa-angle-left"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/evaluation/list" class="nav-link">
+                    <i class="nav-icon fas fa-chalkboard-teacher text-green"></i>
+                    <p>Arsip Evaluasi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://neobdm.tech/qna/list" class="nav-link">
+                    <i class="nav-icon fas fa-question-circle text-green"></i>
+                    <p>Arsip QnA</p>
+                  </a>
+                </li>
+              </ul>
+            </li>            
+            <!-- FAQ -->
+            <li class="nav-item">
+              <a href="https://neobdm.tech/faq/" class="nav-link">
+                <i class="nav-icon fas fa-book text-green"></i>
+                <p>FAQ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-hashtag"></i>
+                <p>Social Media<i class="fas fa-angle-left right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/neobdm" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-youtube"></i> Youtube</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://t.me/joinchat/6tpUCd6qEwZmN2Jl" target="_blank" class="nav-link">
+                    <p><i class="nav-icon fab fa-telegram"></i> Telegram Channel</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      
+<div class="content-header pt-1 pb-0">
+  <div class="container-fluid">
+    <div class="row">
+      <a type="button" class="btn btn-sm btn-default float-end ml-1" href="https://neobdm.tech/dashboard/settings/" style="width: 180px;">Dashboard Settings <i class="fas fa-cog"></i></a>
+    </div>
+  </div>
+</div>
+
+      <!-- /.header -->
+
+      <!-- Content -->
+      <div class="content">
+        
+<div class="container">
+  <div class="row justify-content-center mb-3">
+    <div class="col-xl-6">
+      <div class="row">
+        <h3 class="text-center text-success">
+          <i class="fas fa-search"></i>
+          <strong>&ensp;Dashboard Transaksi&ensp;</strong>
+          <i class="fas fa-search"></i>
+        </h3>
+      </div>
+
+      <div class="row mx-auto" style="width: 454px;">
+        <select id="preset-dropdown-custom" name="method" class="form-dropdown" aria-label=".form-select-sm" style="width: 386px;">
+          
+              <option value=neobdm-m-d>Top Akum Bandarmologi</option>
+          
+              <option value=neobdm-nr-d>Top Akum NonRetail</option>
+          
+              <option value=neobdm-f-d>Top Akum Foreign</option>
+          
+              <option value=neobdm-m-w>Top Akum Bandarmologi 5d</option>
+          
+              <option value=neobdm-nr-w>Top Akum NonRetail 5d</option>
+          
+              <option value=neobdm-f-w>Top Akum Foreign 5d</option>
+          
+          <option disabled>──────────</option>
+                    
+        </select>
+        <button id="download-table-custom" class="btn btn-sm btn-default float-end ml-auto" style="width: 30px;"><i class="fas fa-download"></i></button>
+        <button id="copy-table-custom" class="btn btn-sm btn-default float-end ml-1" style="width: 30px;"><i class="fas fa-copy"></i></button>
+        <div id="table-custom" class="px-0 my-1" style="width: 454px; min-height: 375px;"></div>
+        <div id="table-custom-pagination" class="d-flex px-0 justify-content-end" style="width: 454px"></div>        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <h3 class="text-center text-primary">
+      <i class="fas fa-bolt"></i>
+      <strong>&ensp;Dashboard Momentum Relatif&ensp;</strong>
+      <i class="fas fa-bolt"></i>
+    </h3>
+
+    <div class="col-lg-12 col-md-10 mx-auto">
+      
+      <div class="card card-outline card-primary collapsed-card">
+        <div class="card-header py-1">
+          <h3 class="card-title">Rotation Screener</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body p-0">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th class="w-10">Sektor</th>
+                <th class="w-40">💪 Improving</th>
+                <th class="w-40">🚀 Outperform</th>
+                <th class="w-10 text-right">Sektor</th>
+              </tr>
+            </thead>
+
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXENERGY/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXENERGY</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/IATA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">IATA</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MTFN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MTFN</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PTRO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PTRO</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/RMKE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">RMKE</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TAMU/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TAMU</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ALII/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ALII</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BSML/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BSML</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ENRG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ENRG</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/LEAD/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">LEAD</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/RATU/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">RATU</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/SOCI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">SOCI</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXENERGY/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXENERGY</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXBASIC/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXBASIC</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BRMS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BRMS</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BRPT/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BRPT</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MOLI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MOLI</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NICE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NICE</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NICL/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NICL</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/DGWG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">DGWG</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TINS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TINS</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXBASIC/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXBASIC</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXINDUST/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXINDUST</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/IMPC/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">IMPC</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/INTA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">INTA</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PIPA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PIPA</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BNBR/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BNBR</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/UNTR/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">UNTR</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXINDUST/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXINDUST</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXNONCYC/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXNONCYC</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/AMMS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">AMMS</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BRRC/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BRRC</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/COCO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">COCO</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/LAPD/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">LAPD</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MLPL/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MLPL</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NANO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NANO</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NSSS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NSSS</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/STRK/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">STRK</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/UDNG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">UDNG</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ASHA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ASHA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BEEF/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BEEF</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MSJA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MSJA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PGUN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PGUN</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ULTJ/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ULTJ</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/UNSP/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">UNSP</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/UNVR/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">UNVR</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/WMUU/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">WMUU</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXNONCYC/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXNONCYC</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXCYCLIC/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXCYCLIC</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ESTA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ESTA</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MINA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MINA</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BUVA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BUVA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/HRTA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">HRTA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/IDEA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">IDEA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/JGLE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">JGLE</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/JIHD/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">JIHD</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/KOTA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">KOTA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MDIA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MDIA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MSIN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MSIN</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PART/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PART</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/SCMA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">SCMA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/SOFA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">SOFA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/YELO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">YELO</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXCYCLIC/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXCYCLIC</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXHEALTH/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXHEALTH</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/DKHH/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">DKHH</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PYFA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PYFA</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/SAME/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">SAME</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXHEALTH/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXHEALTH</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXFINANCE/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXFINANCE</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/AHAP/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">AHAP</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BACA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BACA</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BANK/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BANK</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BBKP/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BBKP</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BBYB/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BBYB</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BNBA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BNBA</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/COIN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">COIN</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/JMAS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">JMAS</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PADI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PADI</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BDMN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BDMN</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BMRI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BMRI</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NOBU/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NOBU</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TUGU/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TUGU</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXFINANCE/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXFINANCE</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXPROPERT/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXPROPERT</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ASPI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ASPI</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ELTY/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ELTY</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/INDO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">INDO</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/RISE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">RISE</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TRUE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TRUE</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/UANG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">UANG</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/BCIP/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">BCIP</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/KBAG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">KBAG</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/PANI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">PANI</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXPROPERT/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXPROPERT</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXTECHNO/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXTECHNO</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/KREN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">KREN</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/LUCK/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">LUCK</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/NINE/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">NINE</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TRON/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TRON</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TOSK/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TOSK</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/WIRG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">WIRG</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXTECHNO/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXTECHNO</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXINFRA/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXINFRA</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ASLI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ASLI</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MORA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MORA</a>
+                </span>
+                
+              </th>
+              <th>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ADHI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ADHI</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/ARKO/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">ARKO</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/DGIK/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">DGIK</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MANG/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MANG</a>
+                </span>
+                
+                <span class="bg-success rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/OASA/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">OASA</a>
+                </span>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXINFRA/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXINFRA</a></th>
+            </tr>
+            
+            <tr>
+              <th><a href="https://neobdm.tech/stock_detail/IDXTRANS/" target="_blank" class="mx-1 my-1 text-center"
+                  style="color:white">IDXTRANS</a></th>
+              <th>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/IMJS/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">IMJS</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/KJEN/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">KJEN</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/MITI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">MITI</a>
+                </span>
+                
+                <span class="bg-warning rounded-pill px-1 mx-1">
+                  <a href="https://neobdm.tech/stock_detail/TAXI/" target="_blank" class="mx-1 my-1 text-center"
+                    style="color:white">TAXI</a>
+                </span>
+                
+              </th>
+              <th>
+                
+              </th>
+              <th class="text-right"><a href="https://neobdm.tech/stock_detail/IDXTRANS/" target="_blank"
+                  class="mx-1 my-1 text-center" style="color:white">IDXTRANS</a></th>
+            </tr>
+            
+          </table>
+        </div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+  
+
+
+  
+  <div class="row">    
+    <h3 class="text-center text-warning">
+      <i class="fas fa-file-invoice-dollar"></i>
+      <strong>&ensp;Dashboard Kepemilikan&ensp;</strong>
+      <i class="fas fa-file-invoice-dollar"></i>
+    </h3>
+
+    <div class="col-lg-12 col-md-10 mx-auto">
+      
+      <div class="card card-outline card-warning collapsed-card">
+        <div class="card-header py-1">
+          <h3 class="card-title">Balance Position Screener [January]</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool stretched-link" data-card-widget="collapse">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+    
+        <div class="card-body">
+          
+              <div class="row">
+                  <p><i class="fas fa-robot"></i> Potensi Buyback Institusi</p>
+              </div>
+            
+              <div class="row mb-3 pl-2">
+                  
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/ASLI/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">ASLI</a>
+                    
+                  
+              </div>
+          
+              <div class="row">
+                  <p><i class="fas fa-robot"></i> Ada Indikasi Nominee</p>
+              </div>
+            
+              <div class="row mb-3 pl-2">
+                  
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/AEGS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">AEGS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/SDMU/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">SDMU</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/RMKO/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">RMKO</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/KLAS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">KLAS</a>
+                    
+                  
+              </div>
+          
+              <div class="row">
+                  <p><i class="fas fa-robot"></i> Lokal Individu Berkurang</p>
+              </div>
+            
+              <div class="row mb-3 pl-2">
+                  
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/ASLI/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">ASLI</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/KING/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">KING</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/HITS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">HITS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/REAL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">REAL</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/FITT/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">FITT</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/INDO/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">INDO</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/OBMD/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">OBMD</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/DGNS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">DGNS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/LAJU/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">LAJU</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/JKSW/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">JKSW</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/AGII/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">AGII</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/ANTM/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">ANTM</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/MTDL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">MTDL</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/TPIA/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">TPIA</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/NICL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">NICL</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/DOSS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">DOSS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/BBTN/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">BBTN</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/GGRM/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">GGRM</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/FPNI/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">FPNI</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/EURO/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">EURO</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/FUJI/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">FUJI</a>
+                    
+                  
+              </div>
+          
+              <div class="row">
+                  <p><i class="fas fa-robot"></i> Scripless Nambah</p>
+              </div>
+            
+              <div class="row mb-3 pl-2">
+                  
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/MINE/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">MINE</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/WINR/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">WINR</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/AEGS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">AEGS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/BMBL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">BMBL</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/MTSM/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">MTSM</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/SDMU/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">SDMU</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/TPIA/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">TPIA</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/BKSL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">BKSL</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/BANK/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">BANK</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/OBAT/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">OBAT</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/RMKO/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">RMKO</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/LPCK/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">LPCK</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/KLAS/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">KLAS</a>
+                    
+                      <a type="button" href="https://neobdm.tech/stock_detail/NCKL/" target="_blank" class="btn btn-default btn-outline-light btn-sm mx-1 my-1" style="width:75px">NCKL</a>
+                    
+                  
+              </div>
+          
+              <div class="row">
+                  <p><i class="fas fa-robot"></i> Scripless Berkurang</p>
+              </div>
+            
+              <div class="row mb-3 pl-2">
+                  
+                    <div class="text-muted">Tidak ada emiten yang memenuhi kriteria</div>
+                  
+              </div>
+          
+        </div>
+      </div>         
+      
+    </div>
+  </div>    
+  
+  
+  
+  
+
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    <footer class="main-footer text-sm py-2">
+      <!-- To the right -->
+      <div class="float-right d-none d-sm-inline">
+        <strong>#TradeResponsibly</strong>
+      </div>
+      <!-- Default to the left -->
+      <strong>NeoBDM &copy; 2017-2026. All rights reserved.</strong>
+    </footer>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  
+
+  <script src="../../static/js/jquery/jquery.min.js"></script>
+  <script src="../../static/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <script src="../../static/js/adminlte/adminlte.min.js"></script>
+  <script src="../../static/js/toastr/toastr.min.js"></script>
+  <script src="../../static/js/toastr/toastr-option.js"></script>
+  <script src="../../static/js/selectize/selectize.min.js"></script>  
+  <script src="../../static/js/utils/darkmode.js"></script>
+  <script src="../../static/js/utils/tooltip.js"></script>
+  <script src="../../static/js/utils/sidebar.js"></script>
+  <script src="../../static/js/utils/copy.js"></script>
+  <script>
+    $(() => {
+      $.ajax({
+            url: "/dashboard/~get-choices/",
+            type: 'GET',
+            dataType: 'json',
+            error: function() {
+                console.log("Fetch choices error");
+            },
+            success: function(res) {
+              $("#input-ticker").selectize({
+                placeholder: "Input ticker emiten",    
+                onChange: function(tick) {
+                  window.location.replace(`/stock_detail/${tick}`);
+                },
+                options: res
+              });
+            }
+        });
+    })
+  </script>  
+  
+<script type="text/javascript" src="../../static/js/tabulator/tabulator.min.js"></script>
+<script type="text/javascript" src="../../static/js/peity/peity-vanilla.min.js"></script>
+<script>
+ var barFormatter = function(cell, formatterParams, onRendered){
+    var content = document.createElement("span");
+    var values = cell.getValue();
+
+    //add values to chart and style
+    content.classList.add("bar");
+    content.innerHTML = values.join(",");
+
+    onRendered(() => {
+        peity(content, "bar",  {width: 100, fill: (val) => val > 0 ? "#00bc8c" : "#e74c3c"});
+    });
+    return content;
+};
+
+var pctChgFormatter = (cell) => {
+    var values = cell.getValue();
+    if (values == "null") {
+      return `<span class='text-bold text-yellow'>-</span>`;
+    } else {
+      var style = values > 0 ? "text-green" : "text-red"
+      return `<span class='${style} text-bold'>${cell.getValue().toFixed(2)}%</span>`;
+    }
+}
+
+var numberFormatter = (cell) => {
+    var values = cell.getValue();
+    if (values == "null") {
+      return `<span class='text-bold text-yellow'>-</span>`;
+    } else {
+      var style = values > 0 ? "text-green" : "text-red"
+      return `<span class='${style} text-bold'>${cell.getValue().toFixed(2)}M</span>`;
+    }
+}
+
+var boldFormatter = (cell) => {cell.getElement().classList.add("text-bold"); return cell.getValue()}
+
+var linkFormatter = (cell) => {return `<a href='https://neobdm.tech/stock_detail/${cell.getValue()}' target='_blank' class='text-bold'>${cell.getValue()}</a>`}
+
+$(() => {
+  const keybind_settings = {
+    "copyToClipboard": ["meta + 67", "ctrl + 67"]
+  }
+  const sort_func = (column, dir) => {
+        switch(dir){
+            case "asc":
+              return "<i class='fas fa-sort-up'>";
+              break;
+            case "desc":
+              return "<i class='fas fa-sort-down'>";
+              break;
+            default:
+                return "<i class='fas fa-sort'>";
+        }
+    }
+
+  function col_settings(report_type, method) {
+    var method = method.toUpperCase()
+    if (report_type == "table") {
+      return [
+        {title: "Tick", field: "tick", sorter: "string", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: linkFormatter},
+        {title: "Price", field: "price", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: boldFormatter},
+        {title: "%Chg", field: "chg", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter},
+        {title: `history (${method})`, field: "history", headerHozAlign:"center", headerSort:false, hozAlign:"center", width: 115, formatter: barFormatter, clipboard: false, htmlOutput: false, download: false},
+        {title: `${method}`, field: "tx", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: numberFormatter, clipboard: false, htmlOutput: false, download: false}
+      ]
+    } else if (report_type == "table_norm") {
+      return [
+        {title: "Tick", field: "tick", sorter: "string", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: linkFormatter},
+        {title: "Price", field: "price", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: boldFormatter},
+        {title: "%Chg", field: "chg", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter},
+        {title: `history (${method})`, field: "history", headerHozAlign:"center", headerSort:false, hozAlign:"center", width: 115, formatter: barFormatter, clipboard: false, htmlOutput: false, download: false},
+        {title: `%${method}`, field: "tx", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter, clipboard: false, htmlOutput: false, download: false}
+      ]
+    } else if (report_type == "table_5d") {
+      return [
+        {title: "Tick", field: "tick", sorter: "string", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: linkFormatter},
+        {title: "Price", field: "price", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: boldFormatter},
+        {title: "%Chg(5)", field: "chg", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter},
+        {title: `history (${method})`, field: "history", headerHozAlign:"center", headerSort:false, hozAlign:"center", width: 115, formatter: barFormatter, clipboard: false, htmlOutput: false, download: false},
+        {title: `${method}(5)`, field: "tx", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: numberFormatter, clipboard: false, htmlOutput: false, download: false}
+      ]
+    } else if (report_type == "table_5d_norm") {
+      return [
+        {title: "Tick", field: "tick", sorter: "string", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: linkFormatter},
+        {title: "Price", field: "price", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: boldFormatter},
+        {title: "%Chg(5)", field: "chg", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter},
+        {title: `history (${method})`, field: "history", headerHozAlign:"center", headerSort:false, hozAlign:"center", width: 115, formatter: barFormatter, clipboard: false, htmlOutput: false, download: false},
+        {title: `%${method}(5)`, field: "tx", sorter: "number", headerHozAlign:"center", headerSortTristate: true, hozAlign:"center", formatter: pctChgFormatter, clipboard: false, htmlOutput: false, download: false}
+      ]
+    }
+  }  
+
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
+  
+  
+    
+      var searchbar = `<div class="input-group input-group-sm">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+        <input type="text" class="form-control form-control-sm" id="searchbar-custom" placeholder="BBCA" maxlength="4" style="max-width: 100px">
+        <span class="text-muted text-xs" style="position: absolute; bottom: 0; right: 0">update: Feb. 27, 2026</span>
+      </div>`
+      
+      var tablecustom = new Tabulator("#table-custom", {
+        layout: "fitDataStretch",
+        placeholder: "No Match",
+        selectable: 1,
+        clipboard: "copy",
+        keybindings: keybind_settings,    
+        headerSortElement: sort_func,
+        columns: col_settings("table_norm", "m"),
+        data: [{'tick': 'GGRM', 'price': 17300.0, 'chg': 8.46, 'tx': 19.870275250863372, 'history': [-6475.069, -4964.416, 6501.449, 691.661, 53727.38]}, {'tick': 'INCO', 'price': 7900.0, 'chg': 11.27, 'tx': 19.1245641604072, 'history': [-14757.84, -21656.218, 38983.772, 34476.839, 260740.717]}, {'tick': 'ARCI', 'price': 1880.0, 'chg': 4.44, 'tx': 13.048452299416361, 'history': [-7676.321, 74596.957, 45985.439, -12618.852, 96654.869]}, {'tick': 'SMDR', 'price': 400.0, 'chg': 1.52, 'tx': 12.013957670299396, 'history': [1102.975, -3112.494, 4216.732, -1339.468, 4418.097]}, {'tick': 'ASGR', 'price': 1685.0, 'chg': -0.0, 'tx': 10.797434946875363, 'history': [3846.717, -2682.008, -1537.792, -719.962, 629.042]}, {'tick': 'AADI', 'price': 9250.0, 'chg': -0.0, 'tx': 10.630629356268821, 'history': [-54362.906, -55637.982, 17172.558, 31919.576, 37341.195]}, {'tick': 'PGAS', 'price': 2390.0, 'chg': 3.91, 'tx': 10.053600637239175, 'history': [50317.968, 5330.516, 30793.198, 11343.294, 63839.392]}, {'tick': 'AMMN', 'price': 7650.0, 'chg': 4.79, 'tx': 9.7233068046807, 'history': [-30738.734, -50514.906, -51885.38, 8466.743, 134316.583]}, {'tick': 'ENRG', 'price': 1760.0, 'chg': 8.64, 'tx': 9.652888108918594, 'history': [-97451.861, -117183.842, -79006.016, 22673.256, 177569.585]}, {'tick': 'ASSA', 'price': 1190.0, 'chg': 3.03, 'tx': 9.520764736590536, 'history': [2008.112, 346.275, -2994.327, -6363.832, 1337.024]}, {'tick': 'ESSA', 'price': 645.0, 'chg': 4.88, 'tx': 9.280669305702851, 'history': [-16391.859, -18814.554, -15822.553, -26030.0, 13243.992]}, {'tick': 'ELSA', 'price': 850.0, 'chg': 0.59, 'tx': 8.87059436971403, 'history': [-5822.627, -17021.655, 19902.371, 20714.393, 16991.56]}, {'tick': 'AUTO', 'price': 2900.0, 'chg': 4.32, 'tx': 8.492723015250634, 'history': [2160.884, -2095.034, 4665.435, -2456.096, 6211.986]}, {'tick': 'MSIN', 'price': 640.0, 'chg': 21.9, 'tx': 7.633880324550615, 'history': [16719.781, 8269.123, 7361.558, 6524.542, 13345.893]}, {'tick': 'SMAR', 'price': 5650.0, 'chg': 0.89, 'tx': 7.457654472624715, 'history': [-1270.454, -337.866, -132.132, -1292.442, 68.522]}, {'tick': 'ANTM', 'price': 4350.0, 'chg': 0.46, 'tx': 6.161447202568206, 'history': [129585.209, 115836.338, 19461.771, -104095.939, 80590.959]}, {'tick': 'TINS', 'price': 4600.0, 'chg': 3.37, 'tx': 5.707760960920516, 'history': [126040.463, 39935.271, 43208.385, 39603.86, 60675.511]}, {'tick': 'SOCI', 'price': 675.0, 'chg': 3.85, 'tx': 5.596597591797952, 'history': [2894.28, -16413.632, -6185.683, 14305.35, 5126.756]}, {'tick': 'BGTG', 'price': 136.0, 'chg': -0.0, 'tx': 5.5575486913332846, 'history': [-234.628, -405.522, 264.169, -38.898, 248.673]}, {'tick': 'MAPA', 'price': 700.0, 'chg': 2.94, 'tx': 5.019234709605074, 'history': [1648.1, -1239.96, -4546.957, -13687.468, 4668.245]}, {'tick': 'WIIM', 'price': 2000.0, 'chg': 2.56, 'tx': 4.93254226008591, 'history': [1643.597, -3926.065, -351.706, -2357.744, 2263.241]}, {'tick': 'RLCO', 'price': 7000.0, 'chg': -2.1, 'tx': 4.805095383564809, 'history': [-9750.151, 3347.888, -4036.041, -8381.895, 4065.286]}, {'tick': 'HMSP', 'price': 905.0, 'chg': 2.26, 'tx': 4.7535717808249345, 'history': [-9400.443, -8909.651, 1856.895, 7248.834, 12687.356]}, {'tick': 'INDY', 'price': 3670.0, 'chg': 4.26, 'tx': 4.70360791600167, 'history': [-31136.366, 873.245, -29488.227, -34365.312, 14640.713]}, {'tick': 'ITMG', 'price': 22775.0, 'chg': 1.45, 'tx': 4.5815722339449785, 'history': [2283.894, 8355.297, -4340.994, 14423.028, 7345.284]}, {'tick': 'ADRO', 'price': 2340.0, 'chg': 0.86, 'tx': 4.531282291200668, 'history': [27916.856, 43532.723, 53053.069, -2349.638, 48427.511]}, {'tick': 'ISAT', 'price': 2310.0, 'chg': -0.43, 'tx': 4.330061377633354, 'history': [10807.195, 16803.862, 2629.091, -8851.892, 10013.213]}, {'tick': 'HRUM', 'price': 1165.0, 'chg': 2.64, 'tx': 4.0503846570097295, 'history': [2758.812, 7269.291, 3428.365, -11084.753, 4258.046]}, {'tick': 'AGII', 'price': 3290.0, 'chg': 9.67, 'tx': 3.690784467142276, 'history': [3297.163, 6224.282, 1718.507, -187.005, 2667.426]}, {'tick': 'TKIM', 'price': 11000.0, 'chg': 0.23, 'tx': 3.5316041943790513, 'history': [3459.369, 3911.314, 21368.568, 145448.282, 14042.748]}, {'tick': 'SILO', 'price': 2680.0, 'chg': -1.47, 'tx': 3.343172672270451, 'history': [14.252, -35.563, 118.27, 307.903, 237.077]}, {'tick': 'NCKL', 'price': 1540.0, 'chg': 6.57, 'tx': 2.4869095825589755, 'history': [41396.241, 13191.372, -1765.761, -135967.17, 22938.37]}, {'tick': 'TUGU', 'price': 1445.0, 'chg': 0.7, 'tx': 2.255891123689516, 'history': [3911.841, -149.036, 269.23, -1059.41, 64.626]}, {'tick': 'SRTG', 'price': 1820.0, 'chg': 1.68, 'tx': 1.8780701799178618, 'history': [2511.683, -3804.893, -169.627, 4145.256, 1112.298]}, {'tick': 'INKP', 'price': 11600.0, 'chg': -1.9, 'tx': 1.3219858021178592, 'history': [-103810.655, -16049.012, -248687.791, -201199.483, 9449.961]}, {'tick': 'DNAR', 'price': 160.0, 'chg': 15.94, 'tx': 0.9822160680959782, 'history': [61.488, -68.988, -24.024, -242.554, 248.721]}, {'tick': 'EMAS', 'price': 8325.0, 'chg': 1.22, 'tx': 0.7833388994479002, 'history': [58244.411, -92834.184, -31910.027, 44840.878, 4511.692]}, {'tick': 'ISSP', 'price': 520.0, 'chg': 2.97, 'tx': 0.5704667267515618, 'history': [25.991, 361.508, 8.425, 395.695, 18.763]}, {'tick': 'TRON', 'price': 171.0, 'chg': 9.62, 'tx': 0.28998581010468, 'history': [309.158, -211.333, -410.392, -114.481, 204.383]}, {'tick': 'AYLS', 'price': 238.0, 'chg': 4.39, 'tx': 0.028445423382844323, 'history': [225.852, 18.205, -89.108, 75.907, 0.38]}],
+        pagination: true,
+        paginationSize: 10,
+        paginationButtonCount: 3,
+        paginationElement: document.getElementById("table-custom-pagination"),
+        footerElement: searchbar
+      });
+      $("#copy-table-custom").click((e) => {tablecustom.copyToClipboard("active");})  
+      $("#download-table-custom").click((e) => {tablecustom.download("csv", "data.csv");})    
+      $("#preset-dropdown-custom").change(() => {
+        tablecustom.alert("Mohon menunggu...");
+        $.ajax({
+          type: "POST",
+          url: "/dashboard/~change-preset/",
+          content_type: 'application/json',
+          data: {
+            id: $("#preset-dropdown-custom").val(),
+            csrfmiddlewaretoken: 'FdLS1ZscfVxBj2krLQ0n81X8Cq65NjQeFfkgIjo1Pqe9ERubil4bTJYZNpJAgvFb',
+          },
+          success: (data) => {
+            if (data.success) {
+              tablecustom.setColumns(col_settings(data.report_type, data.method));
+              tablecustom.replaceData(data.data);
+            } else {
+              toastr.error('Failed to update data');
+            }
+            tablecustom.clearAlert();
+          }
+        })    
+      })
+
+      const searchCustomTable = debounce(() => {
+        const value = $('#searchbar-custom').val().trim();
+        tablecustom.setFilter("tick", "=", "__dummy_match__");
+
+        setTimeout(() => {
+          if (value) {
+            tablecustom.setFilter("tick", "like", value);
+          } else {  
+            tablecustom.clearFilter();
+          }
+        }, 150)
+      }, 200);
+      $('#table-custom').on('keyup', "#searchbar-custom", searchCustomTable);
+
+    
+    
+});
+</script>
+
+
+  <!-- Modals -->
+     
+</body>
+
+
+</html>
