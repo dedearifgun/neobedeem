@@ -322,15 +322,13 @@
 
       <!-- Content -->
       <div class="content">
-        
-    <div class="django-plotly-dash django-plotly-dash-direct">
-  
-<div id="react-entry-point">
-  <div class="_dash-loading">
-    Loading...
+<div class="container-fluid">
+  <div class="row mb-2">
+    <div class="col-12 text-center mt-3">
+      <h4 class="text-info"><i class="fas fa-chart-line"></i> Inventory Chart</h4>
+      <div id="main-chart" style="height: 500px; margin-top: 20px;"></div>
+    </div>
   </div>
-</div>
-
 </div>
 
 
@@ -365,23 +363,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -401,33 +392,51 @@ function setUserId() {
 }
 </script>
 
+<script src="../static/js/highchart/highstock.js"></script>
+<script>
+$(() => {
+    $('#dashboard-button').show();
+    $("#dashboard-search-container").hide();
+    $('#dashboard-button').click(() => {
+        $("#dashboard-search-container").show(300);
+        $('#dashboard-button').hide();
+    });
+
+    const priceData = [];
+    const inventoryData = [];
+    const baseDate = new Date('2025-07-01');
+    let price = 9000;
+    let inv = 50;
+    for (let i = 0; i < 120; i++) {
+        const d = new Date(baseDate);
+        d.setDate(d.getDate() + i);
+        if (d.getDay() === 0 || d.getDay() === 6) continue;
+        const ts = d.getTime();
+        price = Math.max(7000, price + (Math.random() - 0.48) * 150);
+        inv = Math.max(0, Math.min(100, inv + (Math.random() - 0.5) * 3));
+        priceData.push([ts, Math.round(price)]);
+        inventoryData.push([ts, Math.round(inv * 10) / 10]);
+    }
+
+    Highcharts.stockChart('main-chart', {
+        chart: { backgroundColor: 'transparent' },
+        title: { text: 'BBCA - Inventory Chart (Demo)', style: { color: '#aaa' } },
+        yAxis: [
+            { title: { text: 'Price', style: { color: '#aaa' } }, height: '60%', labels: { style: { color: '#aaa' } } },
+            { title: { text: 'Inventory %', style: { color: '#aaa' } }, top: '62%', height: '36%', offset: 0, labels: { style: { color: '#aaa' } } }
+        ],
+        series: [
+            { type: 'line', name: 'Price', data: priceData, yAxis: 0, color: '#ffc107' },
+            { type: 'area', name: 'Inventory %', data: inventoryData, yAxis: 1, color: '#17a2b8', fillOpacity: 0.3 }
+        ],
+        credits: { enabled: false },
+        rangeSelector: { selected: 2 }
+    });
+})
+</script>
 
   <!-- Modals -->
      
 </body>
-
-
-    <script id="_dash-config" type="application/json">{"url_base_pathname":"/django_plotly_dash/app/ia_app/","requests_pathname_prefix":"/django_plotly_dash/app/ia_app/","ui":false,"props_check":false,"show_undo_redo":false,"suppress_callback_exceptions":true,"update_title":"Updating...","children_props":{"dash_core_components":{"Checklist":["options[].label"],"Clipboard":[],"ConfirmDialog":[],"ConfirmDialogProvider":[],"DatePickerRange":[],"DatePickerSingle":[],"Download":[],"Dropdown":["options[].label"],"Geolocation":[],"Graph":[],"Input":[],"Interval":[],"Link":[],"Loading":["custom_spinner"],"Location":[],"LogoutButton":[],"Markdown":[],"RadioItems":["options[].label"],"RangeSlider":[],"Slider":[],"Store":[],"Tab":[],"Tabs":[],"Textarea":[],"Tooltip":[],"Upload":[]},"dash_html_components":{"A":[],"Abbr":[],"Acronym":[],"Address":[],"Area":[],"Article":[],"Aside":[],"Audio":[],"B":[],"Base":[],"Basefont":[],"Bdi":[],"Bdo":[],"Big":[],"Blink":[],"Blockquote":[],"Br":[],"Button":[],"Canvas":[],"Caption":[],"Center":[],"Cite":[],"Code":[],"Col":[],"Colgroup":[],"Content":[],"Data":[],"Datalist":[],"Dd":[],"Del":[],"Details":[],"Dfn":[],"Dialog":[],"Div":[],"Dl":[],"Dt":[],"Em":[],"Embed":[],"Fieldset":[],"Figcaption":[],"Figure":[],"Font":[],"Footer":[],"Form":[],"Frame":[],"Frameset":[],"H1":[],"H2":[],"H3":[],"H4":[],"H5":[],"H6":[],"Header":[],"Hgroup":[],"Hr":[],"I":[],"Iframe":[],"Img":[],"Ins":[],"Kbd":[],"Keygen":[],"Label":[],"Legend":[],"Li":[],"Link":[],"Main":[],"MapEl":[],"Mark":[],"Marquee":[],"Meta":[],"Meter":[],"Nav":[],"Nobr":[],"Noscript":[],"ObjectEl":[],"Ol":[],"Optgroup":[],"Option":[],"Output":[],"P":[],"Param":[],"Picture":[],"Plaintext":[],"Pre":[],"Progress":[],"Q":[],"Rb":[],"Rp":[],"Rt":[],"Rtc":[],"Ruby":[],"S":[],"Samp":[],"Script":[],"Section":[],"Select":[],"Shadow":[],"Slot":[],"Small":[],"Source":[],"Spacer":[],"Span":[],"Strike":[],"Strong":[],"Sub":[],"Summary":[],"Sup":[],"Table":[],"Tbody":[],"Td":[],"Template":[],"Textarea":[],"Tfoot":[],"Th":[],"Thead":[],"Time":[],"Title":[],"Tr":[],"Track":[],"U":[],"Ul":[],"Var":[],"Video":[],"Wbr":[],"Xmp":[]},"dash_table":{"DataTable":[]},"dash_bootstrap_components":{"Accordion":[],"AccordionItem":["title"],"Alert":[],"Badge":[],"Breadcrumb":[],"Button":[],"ButtonGroup":[],"Card":[],"CardBody":[],"CardFooter":[],"CardGroup":[],"CardHeader":[],"CardImg":[],"CardImgOverlay":[],"CardLink":[],"Carousel":[],"Collapse":[],"DropdownMenu":["label"],"DropdownMenuItem":[],"Fade":[],"Form":[],"FormFeedback":[],"FormFloating":[],"FormText":[],"Label":[],"Checkbox":["label"],"Checklist":["options[].label"],"Input":[],"InputGroup":[],"InputGroupText":[],"RadioButton":["label"],"RadioItems":["options[].label"],"Select":[],"Switch":["label"],"Textarea":[],"Col":[],"Container":[],"Row":[],"Stack":[],"ListGroup":[],"ListGroupItem":[],"Modal":[],"ModalBody":[],"ModalFooter":[],"ModalHeader":[],"ModalTitle":[],"Nav":[],"NavItem":[],"NavLink":[],"Navbar":[],"NavbarBrand":[],"NavbarSimple":["brand"],"NavbarToggler":[],"Offcanvas":["title"],"Pagination":[],"Placeholder":[],"Popover":[],"PopoverBody":[],"PopoverHeader":[],"Progress":[],"Spinner":[],"Table":[],"Tab":[],"Tabs":[],"Toast":["header"],"Tooltip":[]}},"serve_locally":true}</script>
-<script src="https://unpkg.com/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
-<script src="https://unpkg.com/react@16.14.0/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
-<script src="https://unpkg.com/dash-bootstrap-components@1.7.1/dist/dash_bootstrap_components.min.js"></script>
-<script src="https://unpkg.com/dash-renderer@1.21.1/build/dash_renderer.min.js"></script>
-<script src="https://unpkg.com/dash-core-components@2.14.3/dash_core_components/dash_core_components.js"></script>
-<script src="https://unpkg.com/dash-core-components@2.14.3/dash_core_components/dash_core_components-shared.js"></script>
-<script src="https://unpkg.com/dash-html-components@2.0.20/dash_html_components/dash_html_components.min.js"></script>
-<script src="https://unpkg.com/dash-table@5.2.13/dash_table/bundle.js"></script>
-<script>
-(function() {
-    var clientside = window.dash_clientside = window.dash_clientside || {};
-    var ns = clientside["_dashprivate_clientside_funcs"] = clientside["_dashprivate_clientside_funcs"] || {};
-    ns["9436634c0d61052e8b7731a4833e62500cbf08155eb93b6f967ddcf64bbd61eb"] = 
-    function(){
-        return setUserId();
-    }
-    ;
-})();
-</script><script id="_dash-renderer" type="application/javascript">var renderer = new DashRenderer();</script>
 
 </html>

@@ -601,23 +601,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   

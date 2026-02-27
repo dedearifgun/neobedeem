@@ -323,16 +323,57 @@
       <!-- Content -->
       <div class="content">
         
-    <div class="django-plotly-dash django-plotly-dash-direct">
-  
-<div id="react-entry-point">
-  <div class="_dash-loading">
-    Loading...
+<div class="container-fluid">
+  <div class="row mb-2">
+    <div class="col-12">
+      <h4 class="text-center text-info mt-2"><i class="fas fa-chart-bar"></i> Market Summary - IDX</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-12 mb-3">
+      <div class="card card-outline card-info">
+        <div class="card-header py-1">
+          <h3 class="card-title">Net Foreign Flow (Top 10)</h3>
+        </div>
+        <div class="card-body p-1">
+          <div id="chart-foreign-flow" style="height: 350px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-3">
+      <div class="card card-outline card-success">
+        <div class="card-header py-1">
+          <h3 class="card-title">Net Bandarmologi Flow (Top 10)</h3>
+        </div>
+        <div class="card-body p-1">
+          <div id="chart-bandar-flow" style="height: 350px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-12 mb-3">
+      <div class="card card-outline card-warning">
+        <div class="card-header py-1">
+          <h3 class="card-title">Market Breadth</h3>
+        </div>
+        <div class="card-body p-1">
+          <div id="chart-market-breadth" style="height: 300px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-3">
+      <div class="card card-outline card-danger">
+        <div class="card-header py-1">
+          <h3 class="card-title">Sector Performance</h3>
+        </div>
+        <div class="card-body p-1">
+          <div id="chart-sector-perf" style="height: 300px;"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-</div>
-
 
       </div>
       <!-- /.content -->
@@ -363,25 +404,19 @@
   <script src="../static/js/utils/tooltip.js"></script>
   <script src="../static/js/utils/sidebar.js"></script>
   <script src="../static/js/utils/copy.js"></script>
+  <script src="../static/js/highchart/highcharts.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -393,56 +428,74 @@ $(() => {
         $("#dashboard-search-container").show(300);
         $('#dashboard-button').hide();
     });
+
+    // Foreign Flow Chart
+    Highcharts.chart('chart-foreign-flow', {
+      chart: { type: 'bar', backgroundColor: 'transparent' },
+      title: { text: null },
+      xAxis: { categories: ['BBCA', 'TLKM', 'BBRI', 'ASII', 'BMRI', 'UNVR', 'GOTO', 'BREN', 'PGAS', 'ANTM'], labels: { style: { color: '#aaa' } } },
+      yAxis: { title: { text: 'Net (Miliar Rp)', style: { color: '#aaa' } }, labels: { style: { color: '#aaa' } } },
+      legend: { enabled: false },
+      series: [{
+        name: 'Net Foreign',
+        data: [245.3, 189.7, 156.2, 134.8, 98.5, -45.2, -67.8, -89.3, -112.4, -145.6],
+        color: '#17a2b8',
+        negativeColor: '#dc3545'
+      }],
+      credits: { enabled: false }
+    });
+
+    // Bandar Flow Chart
+    Highcharts.chart('chart-bandar-flow', {
+      chart: { type: 'bar', backgroundColor: 'transparent' },
+      title: { text: null },
+      xAxis: { categories: ['BBRI', 'BMRI', 'ANTM', 'INCO', 'PTBA', 'ADRO', 'BUMI', 'HRUM', 'ITMG', 'MEDC'], labels: { style: { color: '#aaa' } } },
+      yAxis: { title: { text: 'Net (Miliar Rp)', style: { color: '#aaa' } }, labels: { style: { color: '#aaa' } } },
+      legend: { enabled: false },
+      series: [{
+        name: 'Net Bandar',
+        data: [312.5, 278.4, 198.7, 167.3, 145.9, -56.3, -78.9, -102.4, -134.7, -178.2],
+        color: '#28a745',
+        negativeColor: '#dc3545'
+      }],
+      credits: { enabled: false }
+    });
+
+    // Market Breadth Chart
+    Highcharts.chart('chart-market-breadth', {
+      chart: { type: 'column', backgroundColor: 'transparent' },
+      title: { text: null },
+      xAxis: { categories: ['21 Feb', '22 Feb', '23 Feb', '24 Feb', '25 Feb', '26 Feb', '27 Feb'], labels: { style: { color: '#aaa' } } },
+      yAxis: { title: { text: 'Jumlah Saham', style: { color: '#aaa' } }, labels: { style: { color: '#aaa' } } },
+      series: [
+        { name: 'Naik', data: [245, 312, 198, 267, 289, 234, 301], color: '#28a745' },
+        { name: 'Turun', data: [189, 145, 267, 198, 176, 212, 167], color: '#dc3545' },
+        { name: 'Flat', data: [66, 43, 35, 35, 35, 54, 32], color: '#6c757d' }
+      ],
+      credits: { enabled: false }
+    });
+
+    // Sector Performance Chart
+    Highcharts.chart('chart-sector-perf', {
+      chart: { type: 'bar', backgroundColor: 'transparent' },
+      title: { text: null },
+      xAxis: { categories: ['IDXENERGY', 'IDXBASIC', 'IDXINDUST', 'IDXNONCYC', 'IDXCYC', 'IDXHEALTH', 'IDXFINANCE', 'IDXPROPERT', 'IDXTECHNO', 'IDXINFRA', 'IDXTRANS'], labels: { style: { color: '#aaa' } } },
+      yAxis: { title: { text: '% Change', style: { color: '#aaa' } }, labels: { style: { color: '#aaa' } } },
+      legend: { enabled: false },
+      series: [{
+        name: '% Change',
+        data: [1.45, 0.87, -0.23, 0.56, -0.78, 1.12, 0.34, -0.45, 2.34, 0.67, -0.12],
+        color: '#28a745',
+        negativeColor: '#dc3545'
+      }],
+      credits: { enabled: false }
+    });
 })
-
-function setUserId() {
-    $('#user_id').text(84590)
-    return $('#user_id').text()
-}
-
-function add_watchlist(tick) {
-    $.ajax({
-        type: "POST",
-        url: "/watchlist/~add-stock",
-        content_type: 'application/json',
-        data: {
-            csrfmiddlewaretoken: 'h81BTgtgT3kFbJIjinsmbY5Fkm93976nhaAZAAp5ty1dwyS3PSwaWG6wvlMyCjVk',
-            stock: tick
-        },
-        success: (data) => {
-            toastr.success('Added to Watchlist');
-        }
-    })
-}
 </script>
 
 
   <!-- Modals -->
      
 </body>
-
-
-    <script id="_dash-config" type="application/json">{"url_base_pathname":"/django_plotly_dash/app/ms_app/","requests_pathname_prefix":"/django_plotly_dash/app/ms_app/","ui":false,"props_check":false,"show_undo_redo":false,"suppress_callback_exceptions":true,"update_title":"Updating...","children_props":{"dash_core_components":{"Checklist":["options[].label"],"Clipboard":[],"ConfirmDialog":[],"ConfirmDialogProvider":[],"DatePickerRange":[],"DatePickerSingle":[],"Download":[],"Dropdown":["options[].label"],"Geolocation":[],"Graph":[],"Input":[],"Interval":[],"Link":[],"Loading":["custom_spinner"],"Location":[],"LogoutButton":[],"Markdown":[],"RadioItems":["options[].label"],"RangeSlider":[],"Slider":[],"Store":[],"Tab":[],"Tabs":[],"Textarea":[],"Tooltip":[],"Upload":[]},"dash_html_components":{"A":[],"Abbr":[],"Acronym":[],"Address":[],"Area":[],"Article":[],"Aside":[],"Audio":[],"B":[],"Base":[],"Basefont":[],"Bdi":[],"Bdo":[],"Big":[],"Blink":[],"Blockquote":[],"Br":[],"Button":[],"Canvas":[],"Caption":[],"Center":[],"Cite":[],"Code":[],"Col":[],"Colgroup":[],"Content":[],"Data":[],"Datalist":[],"Dd":[],"Del":[],"Details":[],"Dfn":[],"Dialog":[],"Div":[],"Dl":[],"Dt":[],"Em":[],"Embed":[],"Fieldset":[],"Figcaption":[],"Figure":[],"Font":[],"Footer":[],"Form":[],"Frame":[],"Frameset":[],"H1":[],"H2":[],"H3":[],"H4":[],"H5":[],"H6":[],"Header":[],"Hgroup":[],"Hr":[],"I":[],"Iframe":[],"Img":[],"Ins":[],"Kbd":[],"Keygen":[],"Label":[],"Legend":[],"Li":[],"Link":[],"Main":[],"MapEl":[],"Mark":[],"Marquee":[],"Meta":[],"Meter":[],"Nav":[],"Nobr":[],"Noscript":[],"ObjectEl":[],"Ol":[],"Optgroup":[],"Option":[],"Output":[],"P":[],"Param":[],"Picture":[],"Plaintext":[],"Pre":[],"Progress":[],"Q":[],"Rb":[],"Rp":[],"Rt":[],"Rtc":[],"Ruby":[],"S":[],"Samp":[],"Script":[],"Section":[],"Select":[],"Shadow":[],"Slot":[],"Small":[],"Source":[],"Spacer":[],"Span":[],"Strike":[],"Strong":[],"Sub":[],"Summary":[],"Sup":[],"Table":[],"Tbody":[],"Td":[],"Template":[],"Textarea":[],"Tfoot":[],"Th":[],"Thead":[],"Time":[],"Title":[],"Tr":[],"Track":[],"U":[],"Ul":[],"Var":[],"Video":[],"Wbr":[],"Xmp":[]},"dash_table":{"DataTable":[]},"dash_bootstrap_components":{"Accordion":[],"AccordionItem":["title"],"Alert":[],"Badge":[],"Breadcrumb":[],"Button":[],"ButtonGroup":[],"Card":[],"CardBody":[],"CardFooter":[],"CardGroup":[],"CardHeader":[],"CardImg":[],"CardImgOverlay":[],"CardLink":[],"Carousel":[],"Collapse":[],"DropdownMenu":["label"],"DropdownMenuItem":[],"Fade":[],"Form":[],"FormFeedback":[],"FormFloating":[],"FormText":[],"Label":[],"Checkbox":["label"],"Checklist":["options[].label"],"Input":[],"InputGroup":[],"InputGroupText":[],"RadioButton":["label"],"RadioItems":["options[].label"],"Select":[],"Switch":["label"],"Textarea":[],"Col":[],"Container":[],"Row":[],"Stack":[],"ListGroup":[],"ListGroupItem":[],"Modal":[],"ModalBody":[],"ModalFooter":[],"ModalHeader":[],"ModalTitle":[],"Nav":[],"NavItem":[],"NavLink":[],"Navbar":[],"NavbarBrand":[],"NavbarSimple":["brand"],"NavbarToggler":[],"Offcanvas":["title"],"Pagination":[],"Placeholder":[],"Popover":[],"PopoverBody":[],"PopoverHeader":[],"Progress":[],"Spinner":[],"Table":[],"Tab":[],"Tabs":[],"Toast":["header"],"Tooltip":[]}},"serve_locally":true}</script>
-<script src="https://unpkg.com/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
-<script src="https://unpkg.com/react@16.14.0/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
-<script src="https://unpkg.com/dash-bootstrap-components@1.7.1/dist/dash_bootstrap_components.min.js"></script>
-<script src="https://unpkg.com/dash-renderer@1.21.1/build/dash_renderer.min.js"></script>
-<script src="https://unpkg.com/dash-core-components@2.14.3/dash_core_components/dash_core_components.js"></script>
-<script src="https://unpkg.com/dash-core-components@2.14.3/dash_core_components/dash_core_components-shared.js"></script>
-<script src="https://unpkg.com/dash-html-components@2.0.20/dash_html_components/dash_html_components.min.js"></script>
-<script src="https://unpkg.com/dash-table@5.2.13/dash_table/bundle.js"></script>
-<script>
-(function() {
-    var clientside = window.dash_clientside = window.dash_clientside || {};
-    var ns = clientside["_dashprivate_clientside_funcs"] = clientside["_dashprivate_clientside_funcs"] || {};
-    ns["9436634c0d61052e8b7731a4833e62500cbf08155eb93b6f967ddcf64bbd61eb"] = 
-    function(){
-        return setUserId();
-    }
-    ;
-})();
-</script><script id="_dash-renderer" type="application/javascript">var renderer = new DashRenderer();</script>
 
 </html>

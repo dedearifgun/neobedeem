@@ -1227,23 +1227,16 @@
   <script src="../../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -1375,26 +1368,23 @@ $(() => {
       });
       $("#copy-table-custom").click((e) => {tablecustom.copyToClipboard("active");})  
       $("#download-table-custom").click((e) => {tablecustom.download("csv", "data.csv");})    
+      // Mock preset data for demo mode
+      const mockPresets = {
+        'neobdm-m-d': { report_type: 'table_norm', method: 'm', data: [{'tick': 'GGRM', 'price': 17300.0, 'chg': 8.46, 'tx': 19.87, 'history': [-6475, -4964, 6501, 691, 53727]}, {'tick': 'INCO', 'price': 7900.0, 'chg': 11.27, 'tx': 19.12, 'history': [-14757, -21656, 38983, 34476, 260740]}, {'tick': 'ARCI', 'price': 1880.0, 'chg': 4.44, 'tx': 13.05, 'history': [-7676, 74596, 45985, -12618, 96654]}, {'tick': 'ANTM', 'price': 4350.0, 'chg': 0.46, 'tx': 6.16, 'history': [129585, 115836, 19461, -104095, 80590]}, {'tick': 'BBCA', 'price': 9000.0, 'chg': 1.12, 'tx': 5.43, 'history': [12345, 23456, -5678, 34567, 45678]}] },
+        'neobdm-nr-d': { report_type: 'table_norm', method: 'nr', data: [{'tick': 'BBRI', 'price': 3910.0, 'chg': 2.35, 'tx': 15.23, 'history': [23456, 12345, -3456, 45678, 56789]}, {'tick': 'BMRI', 'price': 5200.0, 'chg': 1.87, 'tx': 12.45, 'history': [34567, 23456, 12345, -23456, 67890]}, {'tick': 'TLKM', 'price': 3540.0, 'chg': 0.85, 'tx': 8.76, 'history': [12345, -5678, 23456, 34567, 45678]}] },
+        'neobdm-f-d': { report_type: 'table_norm', method: 'f', data: [{'tick': 'BBCA', 'price': 9000.0, 'chg': 1.12, 'tx': 18.34, 'history': [45678, 34567, 23456, 12345, 56789]}, {'tick': 'ASII', 'price': 4800.0, 'chg': 2.13, 'tx': 14.56, 'history': [23456, 34567, -12345, 45678, 56789]}, {'tick': 'UNVR', 'price': 2800.0, 'chg': -0.71, 'tx': 9.87, 'history': [-12345, 23456, 34567, -23456, 45678]}] },
+        'neobdm-m-w': { report_type: 'table_5d_norm', method: 'm', data: [{'tick': 'PTBA', 'price': 2800.0, 'chg': 5.26, 'tx': 22.45, 'history': [34567, 45678, 23456, 56789, 67890]}, {'tick': 'ADRO', 'price': 2340.0, 'chg': 3.54, 'tx': 18.76, 'history': [23456, 34567, 45678, 12345, 56789]}] },
+        'neobdm-nr-w': { report_type: 'table_5d_norm', method: 'nr', data: [{'tick': 'GOTO', 'price': 68.0, 'chg': 4.62, 'tx': 16.34, 'history': [12345, 23456, 34567, 45678, 56789]}, {'tick': 'BREN', 'price': 4500.0, 'chg': 2.27, 'tx': 11.23, 'history': [23456, 12345, 34567, -12345, 45678]}] },
+        'neobdm-f-w': { report_type: 'table_5d_norm', method: 'f', data: [{'tick': 'TLKM', 'price': 3540.0, 'chg': 1.72, 'tx': 20.12, 'history': [34567, 45678, 56789, 23456, 67890]}, {'tick': 'BBRI', 'price': 3910.0, 'chg': 3.14, 'tx': 15.67, 'history': [45678, 34567, 23456, 56789, 67890]}] },
+      };
+      
       $("#preset-dropdown-custom").change(() => {
-        tablecustom.alert("Mohon menunggu...");
-        $.ajax({
-          type: "POST",
-          url: "/dashboard/~change-preset/",
-          content_type: 'application/json',
-          data: {
-            id: $("#preset-dropdown-custom").val(),
-            csrfmiddlewaretoken: 'FdLS1ZscfVxBj2krLQ0n81X8Cq65NjQeFfkgIjo1Pqe9ERubil4bTJYZNpJAgvFb',
-          },
-          success: (data) => {
-            if (data.success) {
-              tablecustom.setColumns(col_settings(data.report_type, data.method));
-              tablecustom.replaceData(data.data);
-            } else {
-              toastr.error('Failed to update data');
-            }
-            tablecustom.clearAlert();
-          }
-        })    
+        const presetId = $("#preset-dropdown-custom").val();
+        const preset = mockPresets[presetId];
+        if (preset) {
+          tablecustom.setColumns(col_settings(preset.report_type, preset.method));
+          tablecustom.replaceData(preset.data);
+        }
       })
 
       const searchCustomTable = debounce(() => {

@@ -492,60 +492,49 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
 <script>
 $(document).ready(()=>{
+  // Demo mode: mock search results
+  const mockQnA = [
+    { q: 'Bagaimana cara membaca chart bandarmologi?', a: 'Chart bandarmologi menampilkan akumulasi dan distribusi oleh bandar. Perhatikan pola akumulasi di area support.', date: '11 Feb 2026' },
+    { q: 'Apa itu Foreign Flow?', a: 'Foreign Flow adalah aliran dana dari investor asing. Net positif berarti asing sedang akumulasi, net negatif berarti distribusi.', date: '21 Jan 2026' },
+    { q: 'Bagaimana cara menggunakan Rotation Chart?', a: 'Rotation Chart menampilkan posisi sektor dalam siklus rotasi. Sektor di kuadran Leading adalah yang terkuat.', date: '14 Jan 2026' },
+    { q: 'Apa perbedaan Broker Stalker dan Broker Summary?', a: 'Broker Stalker menampilkan aktivitas broker secara real-time, sedangkan Broker Summary menampilkan ringkasan dalam periode tertentu.', date: '17 Dec 2025' },
+  ];
+  
   $('#search-form').on('submit', function(event) {
     event.preventDefault();
-    $('#search-results').html('<p class="text-center">⏳ Mohon tunggu ⌛️</p>');
-    $.ajax({
-      type: "POST",
-      url: "/qna/search",
-      content_type: 'application/json',
-      data: $(this).serialize(),
-      success: (response) => {
-        $('#search-results').html(response);
-      },
-      error: () => {
-        toastr.error('Your input is invalid');
-      }
-    })
-  });
-
-  $(document).on('click', '.pagination-link', function(event) {
-    event.preventDefault();
-    $('#search-results').html("⏳ Mohon tunggu ⌛️");
-    var pageUrl = $(this).attr('href');
-    $.ajax({
-        type: 'POST',
-        url: "/qna/search" + pageUrl,
-        data: $('#search-form').serialize(),
-        success: (response) => {
-            $('#search-results').html(response);
-        },
-        error: () => {
-          toastr.error('Your input is invalid');
-        }
-    });
+    const query = $('#query').val().toLowerCase();
+    const results = mockQnA.filter(item => 
+      item.q.toLowerCase().includes(query) || item.a.toLowerCase().includes(query)
+    );
+    
+    if (results.length === 0) {
+      $('#search-results').html('<p class="text-center text-muted">Tidak ada hasil ditemukan</p>');
+    } else {
+      let html = '';
+      results.forEach(item => {
+        html += `<div class="card mb-2"><div class="card-body py-2">
+          <p class="mb-1"><strong>Q: ${item.q}</strong></p>
+          <p class="mb-1 text-muted">A: ${item.a}</p>
+          <small class="text-muted">${item.date}</small>
+        </div></div>`;
+      });
+      $('#search-results').html(html);
+    }
   });
 })
 </script>  

@@ -405,23 +405,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -430,51 +423,76 @@
 
 
 <script type="text/javascript">
+  // Mock data for demo mode
+  const mockBrokerData = {
+    'BBCA': [
+      { broker: 'YP', buy: 45230000000, sell: 38120000000, net: 7110000000 },
+      { broker: 'BK', buy: 38450000000, sell: 42300000000, net: -3850000000 },
+      { broker: 'ZP', buy: 32100000000, sell: 28900000000, net: 3200000000 },
+      { broker: 'CC', buy: 28750000000, sell: 31200000000, net: -2450000000 },
+      { broker: 'AK', buy: 24500000000, sell: 22100000000, net: 2400000000 },
+      { broker: 'OD', buy: 21300000000, sell: 19800000000, net: 1500000000 },
+      { broker: 'RX', buy: 18900000000, sell: 20100000000, net: -1200000000 },
+      { broker: 'DH', buy: 16700000000, sell: 15400000000, net: 1300000000 },
+      { broker: 'LG', buy: 14200000000, sell: 16800000000, net: -2600000000 },
+      { broker: 'KI', buy: 12800000000, sell: 11900000000, net: 900000000 },
+    ]
+  };
+
+  function formatRp(val) {
+    const abs = Math.abs(val);
+    const sign = val < 0 ? '-' : '';
+    if (abs >= 1000000000) return sign + (abs / 1000000000).toFixed(1) + 'M';
+    if (abs >= 1000000) return sign + (abs / 1000000).toFixed(1) + 'jt';
+    return sign + abs.toLocaleString();
+  }
+
+  function render_broksum_table(tick) {
+    const data = mockBrokerData[tick] || mockBrokerData['BBCA'];
+    const isNet = $("#bs-mode-select").val() === 'true';
+    const isDark = localStorage.getItem('theme') == "dark";
+    const tableClass = isDark ? 'table table-dark table-sm table-bordered text-center' : 'table table-sm table-bordered text-center';
+    
+    let html = `<table class="${tableClass}" style="width:100%; font-size:12px;">
+      <thead><tr class="bg-secondary">
+        <th>Broker</th>
+        <th>Buy</th>
+        <th>Sell</th>
+        ${isNet ? '<th>Net</th>' : ''}
+      </tr></thead><tbody>`;
+    
+    data.forEach(row => {
+      const netClass = row.net >= 0 ? 'text-success' : 'text-danger';
+      html += `<tr>
+        <td><strong>${row.broker}</strong></td>
+        <td class="text-success">${formatRp(row.buy)}</td>
+        <td class="text-danger">${formatRp(row.sell)}</td>
+        ${isNet ? `<td class="${netClass}"><strong>${formatRp(row.net)}</strong></td>` : ''}
+      </tr>`;
+    });
+    
+    html += '</tbody></table>';
+    $("#broksum-table-container").html(html);
+  }
+
   function fetch_broksum() {
-    $.ajax({
-      type: "POST",
-      url: "/api/broker-summary",
-      content_type: 'application/json',
-      data: {
-        tick: $("#input-broksum-ticker").val(),
-        start_date: $("#broksum-start-date").val(),
-        end_date: $("#broksum-end-date").val(),
-        event: broksumEvent,
-        foreign_only: $("#bs-fda-select").val() == "F",
-        domestic_only: $("#bs-fda-select").val() == "D",
-        net: $("#bs-mode-select").val(),
-        show_broker_inventory: false,
-        csrfmiddlewaretoken: 'EGWyKtZsWiUwrxLgtsBK4n0vcIpAtspgEIvWrNVhwNB4MmV00XFyP51mnH25WEed'
-      },
-      success: (data) => {
-        if (data.success) {
-          $("#broksum-table-container").html(data.broksum_html);
-          if (localStorage.getItem('theme') == "dark") {
-            $("#broksum-table-container table").addClass('table-dark');
-          }
-          $("#broksum-start-date").val(data.start_date);
-          $("#broksum-end-date").val(data.end_date);
-        } else {
-          toastr.error('Your input is invalid');
-        }
-      }
-    })
+    const tick = $("#input-broksum-ticker").val() || 'BBCA';
+    render_broksum_table(tick);
   }
 
   $(() => {
-    $.ajax({
-        url: "/broker_summary/ticker-choices/",
-        type: 'GET',
-        dataType: 'json',
-        error: function() {
-            console.log("Fetch choices error");
-        },
-        success: function(res) {
-          $("#input-broksum-ticker").selectize({
-            placeholder: "BBCA",
-            options: res
-          });
-        }
+    $("#input-broksum-ticker").selectize({
+      placeholder: "BBCA",
+      options: [
+        {value: 'BBCA', text: 'BBCA'},
+        {value: 'BBRI', text: 'BBRI'},
+        {value: 'TLKM', text: 'TLKM'},
+        {value: 'ASII', text: 'ASII'},
+        {value: 'BMRI', text: 'BMRI'},
+        {value: 'ANTM', text: 'ANTM'},
+        {value: 'PTBA', text: 'PTBA'},
+      ],
+      onChange: function(val) { fetch_broksum(); }
     });
 
     $("#broksum-start-date").datepicker({
@@ -513,31 +531,27 @@
 
   var broksumEvent;
   $("#broksum-button-back").click((e) => {
-    broksumEvent = $("#broksum-button-back").val()
-  });
-  $("#broksum-button-load").click((e) => {
-    broksumEvent = $("#broksum-button-load").val()
-  });
-  $("#broksum-button-forward").click((e) => {
-    broksumEvent = $("#broksum-button-forward").val()
-  });
-  $("#bs-fda-select").change((e) => {
-    broksumEvent = $("#broksum-button-load").val()
+    broksumEvent = $("#broksum-button-back").val();
     fetch_broksum();
   });
-  $("#bs-val-toggle").click((e) => {
-    broksumEvent = $("#broksum-button-load").val()
-    var label = $("#bs-val-toggle-label").text();
-    if (label == "Val") {
-      $("#bs-val-toggle-label").text("Net");
-    } else if (label == "Net") {
-      $("#bs-val-toggle-label").text("Val");
-    }
+  $("#broksum-button-load").click((e) => {
+    broksumEvent = $("#broksum-button-load").val();
+    fetch_broksum();
+  });
+  $("#broksum-button-forward").click((e) => {
+    broksumEvent = $("#broksum-button-forward").val();
+    fetch_broksum();
+  });
+  $("#bs-fda-select").change((e) => {
+    broksumEvent = $("#broksum-button-load").val();
+    fetch_broksum();
+  });
+  $("#bs-mode-select").change((e) => {
     fetch_broksum();
   });
 
   $('#broker-summary-form').on('submit', (e) => {
-    fetch_broksum()
+    fetch_broksum();
     e.preventDefault();
   });
 </script>

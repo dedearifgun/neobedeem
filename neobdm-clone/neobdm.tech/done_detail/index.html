@@ -449,23 +449,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -487,6 +480,8 @@
           $("#dashboard-search-container").show(300);
           $('#dashboard-button').hide();
       });
+      // Auto-load demo data on page load
+      setTimeout(() => { updateHandler(true, true); }, 500);
   })
   </script>
 
@@ -638,43 +633,98 @@
       return form_data;
     }
 
-    async function updateHandler(update_density, update_history) {
-      var form_data = getFormData();
-      form_data["dd"] = await navigator.clipboard.readText();
-      form_data["chosen_brokers"] = $("#chosen-brokers").val();
-      form_data["update_density"] = update_density;
-      form_data["update_history"] = update_history;
+    // Mock data for demo mode
+    function getMockSankeyData() {
+      return [
+        ['YP', 'BBCA', 45000000],
+        ['BK', 'BBCA', 38000000],
+        ['ZP', 'BBCA', 32000000],
+        ['CC', 'BBCA', 28000000],
+        ['AK', 'BBCA', 24000000],
+        ['BBCA', 'OD', 35000000],
+        ['BBCA', 'RX', 29000000],
+        ['BBCA', 'DH', 22000000],
+        ['BBCA', 'LG', 18000000],
+        ['BBCA', 'KI', 15000000],
+      ];
+    }
 
-      $.ajax({
-        type: "POST",
-        url: "/done_detail/~update",
-        content_type: 'application/json',
-        data: form_data,
-        success: (data) => {
-          if (data.success) {
-            if (update_density) {
-              ddChart.update({
-                series: [{
-                    keys: ['from', 'to', 'weight'],
-                    data: data.sankey,
-                    type: 'sankey',
-                    name: 'Done Detail',
-                    nodeWidth: 50
-                }]
-              });
-            }
-
-            if (update_history) {
-              ddHistoryChart.update({series: histTemplate});
-              ddHistoryChart.update({series: data.history});
-            }
-
-            $("#dd-card-title").text(`${data.stock} Done Detail`)
-          } else {
-            toastr.error('Data is invalid');
-          }
+    function getMockHistoryData() {
+      const baseTime = new Date().setHours(9, 0, 0, 0);
+      const priceData = [];
+      const brokerData = [];
+      let price = 9000;
+      
+      for (let i = 0; i < 60; i++) {
+        const ts = baseTime + i * 5 * 60 * 1000;
+        const open = price;
+        const change = (Math.random() - 0.48) * 50;
+        const close = Math.max(8500, price + change);
+        const high = Math.max(open, close) + Math.random() * 20;
+        const low = Math.min(open, close) - Math.random() * 20;
+        priceData.push([ts, Math.round(open), Math.round(high), Math.round(low), Math.round(close)]);
+        price = close;
+      }
+      
+      const result = [{
+        data: priceData,
+        name: "price",
+        type: 'candlestick',
+        yAxis: 0
+      }];
+      
+      // Add some broker lines
+      const brokers = ['YP', 'BK', 'ZP'];
+      brokers.forEach((broker, idx) => {
+        let pos = 50000 + idx * 10000;
+        const bData = [];
+        for (let i = 0; i < 60; i++) {
+          const ts = baseTime + i * 5 * 60 * 1000;
+          pos = Math.max(0, pos + (Math.random() - 0.5) * 5000);
+          bData.push([ts, Math.round(pos)]);
         }
-      })
+        result.push({
+          data: bData,
+          name: broker,
+          color: colors[idx],
+          marker: {enabled: false, states: {hover: {enabled: false}}},
+          dataGrouping: {approximation: "close"},
+          step: "left",
+          lineWidth: 2,
+          yAxis: 1
+        });
+      });
+      
+      return result;
+    }
+
+    async function updateHandler(update_density, update_history) {
+      // Demo mode: use mock data instead of AJAX
+      const mockData = {
+        success: true,
+        stock: 'BBCA',
+        sankey: getMockSankeyData(),
+        history: getMockHistoryData()
+      };
+      
+      if (update_density) {
+        ddChart.update({
+          series: [{
+              keys: ['from', 'to', 'weight'],
+              data: mockData.sankey,
+              type: 'sankey',
+              name: 'Done Detail',
+              nodeWidth: 50
+          }]
+        });
+      }
+
+      if (update_history) {
+        ddHistoryChart.update({series: histTemplate});
+        ddHistoryChart.update({series: mockData.history});
+      }
+
+      $("#dd-card-title").text(`${mockData.stock} Done Detail`);
     }
 
     async function update_density() {

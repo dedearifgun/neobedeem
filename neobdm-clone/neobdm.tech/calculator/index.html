@@ -586,23 +586,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -621,45 +614,56 @@
   })
 
   $('form').on('submit', (e) => {
-    $.ajax({
-      type: "POST",
-      url: "/calculator/~process/",
-      content_type: 'application/json',
-      data: $("#lot-sizing-form").serialize(),
-      success: (data) => {
-        if (data.success) {
-          $("#plan-container").show(300);
-          $('#plan-table tbody').html(data.plan);
-          $('#plan-table tfoot').html(data.total);
-          $("#average").val(data.avg);
-          $("#loss").val(data.tot_loss);
-        } else {
-          toastr.error('Your input is invalid');
-        }
-      }
-    })
     e.preventDefault();
+    // Client-side calculation (demo mode)
+    const entries = $('input[name="entry"]').map(function() { return parseFloat($(this).val()); }).get().filter(v => !isNaN(v) && v > 0);
+    const sl = parseFloat($('#sl').val());
+    const riskPct = parseFloat($('#risk-percent').val());
+    const feePct = parseFloat($('#fee-percent').val());
+    const balance = parseFloat($('#balance').val()) * 1000000;
+    
+    if (entries.length === 0 || isNaN(sl) || sl <= 0) {
+      toastr.error('Your input is invalid');
+      return;
+    }
+    
+    const riskAmount = balance * riskPct / 100;
+    let tbody = '';
+    let totalLot = 0;
+    let totalValue = 0;
+    let weightedSum = 0;
+    
+    entries.forEach(entry => {
+      const slPct = Math.abs((entry - sl) / entry) * 100;
+      const lotValue = riskAmount / (slPct / 100) / entries.length;
+      const lot = Math.floor(lotValue / (entry * 100));
+      const value = lot * entry * 100;
+      totalLot += lot;
+      totalValue += value;
+      weightedSum += entry * lot;
+      tbody += `<tr><td>${entry.toLocaleString()}</td><td>${sl.toLocaleString()}</td><td>${lot.toLocaleString()}</td><td>${slPct.toFixed(2)}%</td><td>${(value/1000000).toFixed(2)}jt</td></tr>`;
+    });
+    
+    const avg = totalLot > 0 ? (weightedSum / totalLot).toFixed(0) : 0;
+    const totLoss = (totalValue * Math.abs(avg - sl) / avg / 1000000).toFixed(2);
+    
+    $('#plan-table tbody').html(tbody);
+    $('#plan-table tfoot').html(`<tr class="bg-secondary"><td colspan="2"><strong>Total</strong></td><td>${totalLot.toLocaleString()}</td><td>-</td><td>${(totalValue/1000000).toFixed(2)}jt</td></tr>`);
+    $("#average").val(parseInt(avg).toLocaleString());
+    $("#loss").val(totLoss + 'jt');
+    $("#plan-container").show(300);
+    $("#value-size").text((totalValue/1000000).toFixed(2) + 'jt');
   });
 
   $("#input-ticker").selectize({
     placeholder: "Input ticker emiten",    
-    onChange: function(tick) {
-      window.location.replace(`/dashboard/${tick}`);
-    },
-    load: function(query, callback) {
-      if (!query.length) return callback();
-      $.ajax({
-          url: "/dashboard/~get-choices/",
-          type: 'GET',
-          dataType: 'json',
-          error: function() {
-              console.log("Fetch choices error");
-          },
-          success: function(res) {
-            callback(res)
-          }
-      });
-    }
+    options: [
+      {value: 'BBCA', text: 'BBCA'},
+      {value: 'BBRI', text: 'BBRI'},
+      {value: 'TLKM', text: 'TLKM'},
+      {value: 'ASII', text: 'ASII'},
+      {value: 'BMRI', text: 'BMRI'}
+    ]
   });
 
   $('#tp').keyup( () => {

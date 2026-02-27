@@ -3281,23 +3281,16 @@
   <script src="../static/js/utils/copy.js"></script>
   <script>
     $(() => {
-      $.ajax({
-            url: "/dashboard/~get-choices/",
-            type: 'GET',
-            dataType: 'json',
-            error: function() {
-                console.log("Fetch choices error");
-            },
-            success: function(res) {
-              $("#input-ticker").selectize({
-                placeholder: "Input ticker emiten",    
-                onChange: function(tick) {
-                  window.location.replace(`/stock_detail/${tick}`);
-                },
-                options: res
-              });
-            }
-        });
+      $("#input-ticker").selectize({
+        placeholder: "Input ticker emiten",    
+        options: [
+          {value: 'BBCA', text: 'BBCA'},
+          {value: 'BBRI', text: 'BBRI'},
+          {value: 'TLKM', text: 'TLKM'},
+          {value: 'ASII', text: 'ASII'},
+          {value: 'BMRI', text: 'BMRI'}
+        ]
+      });
     })
   </script>  
   
@@ -3307,21 +3300,43 @@
   $(document).ready(()=>{
     YouTubePlayerModal.init();
 
+    // Demo mode: mock search results for clips
+    const mockClips = [
+      { title: 'Cara Membaca Chart Bandarmologi', duration: '12 menit', videoId: 'yEzgKMUBZYQ', timeStart: 0, timeEnd: 720 },
+      { title: 'Strategi Entry dan Exit Saham', duration: '8 menit', videoId: 'q-gXilNVHYM', timeStart: 120, timeEnd: 600 },
+      { title: 'Analisa Foreign Flow untuk Pemula', duration: '15 menit', videoId: 'DU3qgaU09qs', timeStart: 0, timeEnd: 900 },
+      { title: 'Risk Management dalam Trading', duration: '10 menit', videoId: 'yEzgKMUBZYQ', timeStart: 865, timeEnd: 1363 },
+    ];
+    
     $('#search-form').on('submit', function(event) {
       event.preventDefault();
-      $('#search-results').html('<p class="text-center">⏳ Mohon tunggu ⌛️</p>');
-      $.ajax({
-        type: "POST",
-        url: "/clip/search",
-        content_type: 'application/json',
-        data: $(this).serialize(),
-        success: (response) => {
-          $('#search-results').html(response);
-        },
-        error: () => {
-          toastr.error('Your input is invalid');
-        }
-      })
+      const query = $('#query').val().toLowerCase();
+      const results = mockClips.filter(item => item.title.toLowerCase().includes(query));
+      
+      if (results.length === 0) {
+        $('#search-results').html('<p class="text-center text-muted">Tidak ada hasil ditemukan</p>');
+      } else {
+        let html = '<div class="row">';
+        results.forEach(item => {
+          html += `<div class="col-md-6 mb-3">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-4">
+                  <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg" class="img-fluid rounded-start" alt="${item.title}">
+                </div>
+                <div class="col-8">
+                  <div class="card-body py-2">
+                    <h6 class="card-title">${item.title}</h6>
+                    <small class="text-muted">${item.duration}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+        });
+        html += '</div>';
+        $('#search-results').html(html);
+      }
     });
   })
 </script>
